@@ -6,7 +6,6 @@ import Home from './Home';
 import MeetDog from './MeetDog';
 import Profile from './Profile';
 import SavedPics from './SavedPics';
-import axios from 'axios';
 
 import {
   BrowserRouter as Router,

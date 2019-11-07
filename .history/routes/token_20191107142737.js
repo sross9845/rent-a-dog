@@ -25,14 +25,8 @@ router.get('/', (req, res) => {
     })
 
 router.get('/:id', (req, res) => {
-        Token.findById(req.params.id, (err, token) => {
-            console.log(`token ${req.params.id}`)
-            axios.get('https://api.petfinder.com/v2/animals', {headers: {
-            Authorization: `Bearer ${token.token}`
-        }}).then(response => {
-            console.log(`------------------------------- in the post token stage`)
-            res.send(response.data)
-        })
+        Token.findById(req.params.id).then(tokenObj => {
+            
         })
     })
 

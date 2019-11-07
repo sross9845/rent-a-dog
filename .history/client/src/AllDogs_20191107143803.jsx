@@ -13,8 +13,7 @@ class AllDogs extends Component {
             this.setState({
                 tokenVar: response.data
             })
-            console.log(response.data)
-            axios.get(`/token/${response.data._id}`)
+            axios.get(`/token/${response.data.id}`)
             .then(response => {
                 console.log('in this route')
                 this.setState({
@@ -27,8 +26,8 @@ class AllDogs extends Component {
     render() { 
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
-        if (this.state.dogList) {
-            var myObj = this.state.dogList.animals.map((ele, id) => <p>{ele.url}</p>)
+        if (this.state.tokenVar) {
+            var myObj = this.state.tokenVar.token
         } else {
             var myObj = 'loading'
         }
