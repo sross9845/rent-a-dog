@@ -14,8 +14,7 @@ class App extends Component {
     token: '',
     user: null,
     errorMessage: '',
-    lockedResult: '',
-    
+    lockedResult: ''
   }
   checkForLocalToken = () => {
     //look for token in local storage

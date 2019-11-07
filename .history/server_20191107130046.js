@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(helmet())
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URLTWO, {useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection
 db.once('open', () => {
     console.log(`connected to MongoDb on ${db.host}:${db.port}...`)
@@ -20,7 +21,6 @@ db.on('error', (err) => {
 })
 
 app.use('/auth', require('./routes/auth'))
-app.use('/token', require('./routes/token'))
 
 app.use('/locked',
     expressJWT({secret: process.env.JWT_SECRET}).unless({method: 'POST'}),

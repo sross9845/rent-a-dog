@@ -14,8 +14,7 @@ class App extends Component {
     token: '',
     user: null,
     errorMessage: '',
-    lockedResult: '',
-    
+    lockedResult: ''
   }
   checkForLocalToken = () => {
     //look for token in local storage
@@ -108,5 +107,5 @@ class App extends Component {
     );
   }
 }
-
+ 
 export default App;
