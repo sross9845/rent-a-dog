@@ -10,6 +10,7 @@ class Home extends Component {
           errorMessage: '',
           lockedResult: '',
           login: false,
+          tokenTime: Date();
         }
         checkForLocalToken = () => {
           //look for token in local storage

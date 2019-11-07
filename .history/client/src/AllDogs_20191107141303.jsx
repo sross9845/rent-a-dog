@@ -4,7 +4,7 @@ import axios from 'axios';
 class AllDogs extends Component {
     state = {
         tokenVar: null,
-        dogList: null
+        loading: 'loading'
     }
 
     componentDidMount = () => {
@@ -13,29 +13,22 @@ class AllDogs extends Component {
             this.setState({
                 tokenVar: response.data
             })
-            console.log(response.data)
-            axios.get(`/token/${response.data._id}`)
-            .then(response => {
-                console.log('in this route')
-                this.setState({
-                    dogList: response.data
-                })
-            })
         })
     }
 
     render() { 
         console.log(this.state.tokenVar)
-        console.log(this.state.dogList)
-        if (this.state.dogList) {
-            var myObj = this.state.dogList.animals.map((ele, id) => <p>{ele.url}</p>)
+        if (this.state.tokenVar) {
+            var mappedtoken = this.state.tokenVar.map((ele, id) => (
+                <p key={id}>{ele}</p>
+            ))
         } else {
-            var myObj = 'loading'
+            var mappedtoken = this.state.loading
         }
         return ( 
             <div>
                 <p>Hit the dogs route</p>
-                {myObj}
+                {mappedtoken}
             </div>
         );
     }

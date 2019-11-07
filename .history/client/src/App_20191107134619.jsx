@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import AllDogs from './AllDogs';
-import CreatePic from './CreatePic';
-import Home from './Home';
-import MeetDog from './MeetDog';
-import Profile from './Profile';
-import SavedPics from './SavedPics';
-import axios from 'axios';
-
+import Login from './Login'
+import SignUp from './SignUp'
+import axios from 'axios'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
 class App extends Component {
@@ -86,18 +82,28 @@ class App extends Component {
       })
     })
   }
-  
   render() { 
+    let contents;
+    if(this.state.user){
+      contents =(
+        <nav>
+          <p>Hello, {this.state.user.name}</p>
+          <button onClick={this.handleClick}>Test the protected route</button>
+          <button onClick={this.logOut}>Log Out</button>
+        </nav>
+      )
+    } else {
+      contents = (
+        <nav>
+        <SignUp liftToken={this.liftToken} />
+        <Login liftToken={this.liftToken} /> 
+        </nav>
+      )
+    }
     return ( 
-      <div>
-        <Router>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/dogs' component={AllDogs} />
-        <Route exact path='/create' component={CreatePic} />
-        <Route exact path='/meet/:id' component={MeetDog} />
-        <Route exact path='/saved' component={SavedPics} />
-        <Route exact path='/profile' component={Profile} />
-        </Router>
+        <div className='App'>
+          <h1>My Site</h1>
+          {contents}
         </div>
     );
   }

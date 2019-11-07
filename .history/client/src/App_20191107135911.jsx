@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import AllDogs from './AllDogs';
-import CreatePic from './CreatePic';
-import Home from './Home';
-import MeetDog from './MeetDog';
-import Profile from './Profile';
-import SavedPics from './SavedPics';
-import axios from 'axios';
+import AllDogs from './AllDogs'
+import CreatePic from './CreatePic'
+import Home from './Home'
+import MeetDog from './MeetDog'
+import Profile from './Profile'
+import SavedPics from './SavedPics'
 
 import {
   BrowserRouter as Router,

@@ -9,7 +9,7 @@ class Home extends Component {
           user: null,
           errorMessage: '',
           lockedResult: '',
-          login: false,
+          login: false
         }
         checkForLocalToken = () => {
           //look for token in local storage
@@ -118,8 +118,8 @@ class Home extends Component {
             <h2>The RADdest app out there</h2>
             {contents}
             </div> 
-        );
+         );
     }
 }
-
+ 
 export default Home;
