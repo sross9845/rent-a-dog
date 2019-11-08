@@ -3,8 +3,6 @@ import axios from 'axios';
 import DogList from './DogList'
 import SelectedDog from './SelectedDog'
 
-// YES THERE IS
-
 class AllDogs extends Component {
     state = {
         tokenVar: null,

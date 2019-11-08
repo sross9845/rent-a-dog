@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DogList from './DogList'
-import SelectedDog from './SelectedDog'
-
-// YES THERE IS
 
 class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '46517179',
-        currentDog: null
+        singleDogId: '124',
     }
 
     componentDidMount = () => {
@@ -39,7 +34,6 @@ class AllDogs extends Component {
         })
         
     }
-    
 
     render() { 
         console.log(this.state.tokenVar)
@@ -55,18 +49,8 @@ class AllDogs extends Component {
                 {myObj}
                 <button onClick={this.handleClick}>find one dog</button>
             </div>
-        
-        )
+        );
     }
-        // return ( 
-        //     <div>
-        //         <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
-        //         <SelectedDog dog={this.state.currentDog} />
-        //     </div>
-        // );
-    // }
 }
 
-
-
-    export default AllDogs;
+export default AllDogs;
