@@ -92,24 +92,24 @@ class Home extends Component {
           let contents;
           if(this.state.user){
             contents =(
-            <nav>
+                <div>
                 <p>Hello, {this.state.user.name}</p>
                 <button onClick={this.logOut}>Log Out</button>
-            </nav>
+                </div>
             )
         } else if (this.state.login){
             contents = (
-            <nav>
+            <div>
             <Login liftToken={this.liftToken} /> 
             <button onClick={this.handleLoginClick}> Sign Up Instead!</button>
-            </nav>
+            </div>
             )
         } else{
             contents = (
-                <nav>
+                <div>
                 <SignUp liftToken={this.liftToken} />
                 <button onClick={this.handleLoginClick}> Login Instead!</button>
-                </nav>
+                </div>
                 )
         }
         return ( 

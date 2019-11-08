@@ -8,13 +8,13 @@ class SelectedDog extends Component {
     render() { 
         if (this.props.dog){
             var dogInfo = (
-                    <div>
+                    <div className='doginfoafter'>
                         <p>{this.props.dog.animal.description}</p>
                     </div>
             )
         } 
         const emptyInfo = (
-            <div>
+            <div className='doginfobefore'>
                 <p>
                 Click a dog to find out more!
                 </p>
@@ -22,7 +22,7 @@ class SelectedDog extends Component {
             )
         let details = this.props.dog ? dogInfo : emptyInfo
         return ( 
-            <div>
+            <div className="selected">
                 {details}
             </div>
             

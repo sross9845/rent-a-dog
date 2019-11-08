@@ -7,12 +7,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container{
+  display: flex;
+}
+
 .sideBarDiv {
   border: 2px solid black;
 }
 
 .sidebar{
-  width: 25%
+  width: 25%;
+  height:100vh;
+  overflow-y: scroll;
+  background-color: #f0f0f0;
+}
+
+.selected{
+  flex-grow: 1;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.doginfobefore{
+  font-size: 4em;
+}
+
+nav{
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  font-size: 2em;
+  
+}
+
+.navlink{
+  color: white;
+  margin: 2.5em;
+  text-decoration: none;
+  line-height: 50px;
 }
 
 code {
