@@ -28,8 +28,12 @@ class AllDogs extends Component {
 
     handleDetailsClick = (ele) => {
         console.log (ele.name)
-        // const url = `https://api.petfinder.com/v2/animals/${ele.id}`
-        // axios.get(url).then(response => {
+        // const url = `https://api.petfinder.com/v2/animals/46517165`
+        // axios.get(url, {
+        //     headers: {
+        //         Authorization: Bearer {this.state.tokenVar.token}
+        //     }
+        // }).then(response => {
         //   this.setState({
         //     currentDog: response.data
         //   })
@@ -40,8 +44,6 @@ class AllDogs extends Component {
     render() { 
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
-        
-
         return ( 
             <div>
            <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>

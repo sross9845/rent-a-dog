@@ -12,7 +12,7 @@ class SelectedDog extends Component {
                         <p>{this.props.dog.description}</p>
                     </div>
             )
-        }
+        } 
         const emptyInfo = (
             <div>
                 <p>
