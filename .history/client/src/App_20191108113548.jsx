@@ -95,7 +95,7 @@ class App extends Component {
         <nav><Link to='/'>HOME</Link>{' | '}<Link to='/dogs'>DOGS</Link>{' | '}<Link to='/create'>CREATE</Link>{' | '}<Link to='/saved'>SAVED</Link>{' | '}<Link to='/profile'>PROFILE</Link>{' | '}</nav>
           <Route exact path='/' component={Home} />
           <Route exact path='/dogs' component={AllDogs} />
-          <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
+          <Route exact path='/create' render={() => <Create user={this.state.user}/> } />
           <Route exact path='/meet/:id' component={MeetDog} />
           <Route exact path='/saved' component={SavedPics} />
           <Route exact path='/profile' render={() => <Profile user={this.state.user}/> } />

@@ -30,11 +30,11 @@ const axios = require('axios');
         Token.findById(req.params.id, (err, token) => {
             axios.get('https://api.petfinder.com/v2/animals', {headers: {
             Authorization: `Bearer ${token.token}`
-            }}).then(response => {
-                res.send(response.data)
-            })
+        }}).then(response => {
+            res.send(response.data)
         })
     })
+})
 
     // Route to /tokens/tokenID/DogID --> grabs specific dog by dogs id in api
     router.get('/:tid/:did', (req, res) => {
@@ -46,7 +46,6 @@ const axios = require('axios');
             })
         })
     })    
-
 
 
 

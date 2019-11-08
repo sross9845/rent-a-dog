@@ -18,6 +18,7 @@ class AllDogs extends Component {
             this.setState({
                 tokenVar: response.data
             })
+            console.log(response.data)
             axios.get(`/token/${response.data._id}`)
             .then(response => {
                 console.log('in this route')

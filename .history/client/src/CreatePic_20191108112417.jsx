@@ -1,0 +1,43 @@
+import React, { Component } from 'react';
+import axios from 'axios'
+
+class CreatePic extends Component {
+
+    state = { 
+        tokenVar: null,
+        dogList: null
+    }
+
+    componentDidMount = () => {
+        axios.get('/token')
+        .then(response => {
+            this.setState({
+                tokenVar: response.data
+            })
+            console.log(response.data)
+            axios.get(`/token/${response.data._id}`)
+            .then(response => {
+                console.log('in this route')
+                this.setState({
+                    dogList: response.data
+                })
+            })
+        })
+    }
+
+    handleClick = (event) => {
+        event.preventDefault()
+
+    }
+
+    render() { 
+        return ( 
+            <div>
+                <p> Hit the create pic route</p>
+                <button onClick={this.handleClick}>Favorite This Dog!</button>
+            </div>
+        );
+    }
+}
+
+export default CreatePic;

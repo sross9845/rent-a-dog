@@ -33,19 +33,21 @@ class CreatePic extends Component {
 
     handleClick = (event) => {
         event.preventDefault(); 
-        console.log(event.target.name.value)
-        console.log(event.target.id.value)
+        console.log(this.props.user)
+        console.log(event.target.name)
         this.setState({
-            name : event.target.name.value
+            [event.target.name] : event.target.value
         })
         console.log(this.state.name)
-        axios.post(`/favourite/${this.props.user._id}/${event.target.name.value}/${event.target.id.value}`)
+        axios.post(`/favourite/${this.props.user._id}/${event.target.name}/${event.target.id}`)
     }
 
     render() { 
         if (this.state.dogList) {
-            var mappedDogs = this.state.dogList.animals.map((ele, id) => <form onSubmit={this.handleClick} ><p key={id}>{ele.name}</p>
-                                                                    <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
+            console.log(this.state.dogList.animals)
+            console.log(this.props.user)
+            var mappedDogs = this.state.dogList.animals.map((ele, id) => <form onClick={this.handleClick} key={id}>
+                                                                    <input type="hidden" name="name" value={this.state.name} onChange={this.handleChange}/>{ele.name}
                                                                     <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
                                                                     <input type="submit" value="Favorite This Dog!"/>
                                                                     </form>)
