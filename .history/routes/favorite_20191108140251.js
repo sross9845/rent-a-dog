@@ -9,7 +9,6 @@ router.post('/:uid/:name/:id', (req, res) => {
             apiID: req.params.id,
             name: req.params.name,
         })
-        user.save()
         console.log(user.favoriteDogs)
     })
 })
