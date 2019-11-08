@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 class SavedPics extends Component {
+
     state = { 
         tokenVar: null,
         dogList: null
@@ -23,6 +24,7 @@ class SavedPics extends Component {
             })
         })
     }
+
 
     render() { 
         return ( 

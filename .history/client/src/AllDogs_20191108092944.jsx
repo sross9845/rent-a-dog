@@ -7,7 +7,7 @@ class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '46517179',
+        singleDogId: '124',
         currentDog: null
     }
 
@@ -54,8 +54,7 @@ class AllDogs extends Component {
                 <button onClick={this.handleClick}>find one dog</button>
             </div>
         
-        )
-    }
+
         // return ( 
         //     <div>
         //         <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
@@ -65,6 +64,4 @@ class AllDogs extends Component {
     // }
 }
 
-
-
-    export default AllDogs;
+export default AllDogs;

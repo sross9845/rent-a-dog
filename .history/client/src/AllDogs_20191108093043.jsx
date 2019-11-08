@@ -7,7 +7,7 @@ class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '46517179',
+        singleDogId: '124',
         currentDog: null
     }
 
@@ -63,8 +63,6 @@ class AllDogs extends Component {
         //     </div>
         // );
     // }
-}
 
 
-
-    export default AllDogs;
+export default AllDogs;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 class CreatePic extends Component {
+
     state = { 
         tokenVar: null,
         dogList: null

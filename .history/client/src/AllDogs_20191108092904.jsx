@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DogList from './DogList'
 import SelectedDog from './SelectedDog'
-
 class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '46517179',
+<<<<<<< HEAD
+        singleDogId: '124',
+=======
         currentDog: null
+>>>>>>> b93c728e3b006abb2e0c0894c5b957fc36bb3dcc
     }
 
     componentDidMount = () => {
@@ -54,17 +56,14 @@ class AllDogs extends Component {
                 <button onClick={this.handleClick}>find one dog</button>
             </div>
         
-        )
+
+        return ( 
+            <div>
+            <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
+            <SelectedDog dog={this.state.currentDog} />
+           </div>
+        );
     }
-        // return ( 
-        //     <div>
-        //         <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
-        //         <SelectedDog dog={this.state.currentDog} />
-        //     </div>
-        // );
-    // }
 }
 
-
-
-    export default AllDogs;
+export default AllDogs;

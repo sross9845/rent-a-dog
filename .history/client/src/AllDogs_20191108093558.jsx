@@ -7,7 +7,7 @@ class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '46517179',
+        singleDogId: '124',
         currentDog: null
     }
 
