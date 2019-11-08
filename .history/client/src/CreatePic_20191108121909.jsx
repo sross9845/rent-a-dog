@@ -39,7 +39,7 @@ class CreatePic extends Component {
             name : event.target.name.value
         })
         console.log(this.state.name)
-        axios.post(`/favourite/${this.props.user._id}/${event.target.name.value}/${event.target.id.value}`)
+        axios.post(`/favourite/${this.props.user._id}/${event.target.name.value}/${event.target.id}`)
     }
 
     render() { 

@@ -47,6 +47,11 @@ const axios = require('axios');
         })
     })    
 
+    router.get('/favourites/:tid/:id', (req, res) => {
+        Token.findById(req.params.tid, (err, token) => {
+            axios.get()
+        })
+    })
 
 
 

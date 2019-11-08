@@ -47,6 +47,9 @@ const axios = require('axios');
         })
     })    
 
+    router.get('/favourites/:id', (req, res) => {
+        
+    })
 
 
 

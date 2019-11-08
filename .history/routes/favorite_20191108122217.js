@@ -7,7 +7,7 @@ router.post('/:uid/:name/:id', (req, res) => {
     User.findById(req.params.uid, (err, user) => {
         console.log(user.favoriteDogs)
         user.favoriteDogs.push({
-            apiID: req.params.id,
+            id: req.params.id,
             name: req.params.name,
         })
         console.log(user.favoriteDogs)

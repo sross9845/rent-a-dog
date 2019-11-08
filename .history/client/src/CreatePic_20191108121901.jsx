@@ -36,10 +36,10 @@ class CreatePic extends Component {
         console.log(event.target.name.value)
         console.log(event.target.id.value)
         this.setState({
-            name : event.target.name.value
+            name : event.target.name
         })
         console.log(this.state.name)
-        axios.post(`/favourite/${this.props.user._id}/${event.target.name.value}/${event.target.id.value}`)
+        axios.post(`/favourite/${this.props.user._id}/${event.target.name}/${event.target.id}`)
     }
 
     render() { 
