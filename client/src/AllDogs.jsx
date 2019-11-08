@@ -41,6 +41,7 @@ class AllDogs extends Component {
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
         
+
         return ( 
             <div>
            <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
