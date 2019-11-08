@@ -20,7 +20,7 @@ class SavedPics extends Component {
             axios.get(`/favourite/${this.props.user._id}`)
             .then(response => {
                 this.setState({
-                    dogList: response.data.favoriteDogs
+                    dogList: response.data
                 })
             })
         }
@@ -28,15 +28,11 @@ class SavedPics extends Component {
 
     render() { 
         if (this.state.dogList) {
-            console.log(this.state.dogList)
             var mappedDogs = this.state.dogList.map((ele, id) => <p key={id}>{ele.name}</p>)
-        } else {
-            var mappedDogs = 'loading favourites'
         }
         return ( 
             <div>
                 <p> Hit the saved pic route</p>
-                {mappedDogs}
             </div>
         );
     }

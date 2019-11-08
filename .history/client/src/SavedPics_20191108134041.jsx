@@ -15,28 +15,23 @@ class SavedPics extends Component {
                 tokenVar: response.data
             })
             console.log(response.data)
-        })
-        if (this.props.user) {
-            axios.get(`/favourite/${this.props.user._id}`)
+            axios.get(`/token/${response.data._id}`)
             .then(response => {
+                console.log('in this route')
                 this.setState({
-                    dogList: response.data.favoriteDogs
+                    dogList: response.data
                 })
             })
-        }
+        })
     }
 
+    
+
+
     render() { 
-        if (this.state.dogList) {
-            console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((ele, id) => <p key={id}>{ele.name}</p>)
-        } else {
-            var mappedDogs = 'loading favourites'
-        }
         return ( 
             <div>
                 <p> Hit the saved pic route</p>
-                {mappedDogs}
             </div>
         );
     }

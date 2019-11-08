@@ -20,7 +20,7 @@ class SavedPics extends Component {
             axios.get(`/favourite/${this.props.user._id}`)
             .then(response => {
                 this.setState({
-                    dogList: response.data.favoriteDogs
+                    dogList: response.data
                 })
             })
         }
