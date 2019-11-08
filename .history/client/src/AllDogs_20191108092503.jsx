@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DogList from './DogList'
-import SelectedDog from './SelectedDog'
-
-// YES THERE IS
 
 class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        currentDog: null
+        singleDogId: '124',
     }
 
     componentDidMount = () => {
@@ -29,31 +25,32 @@ class AllDogs extends Component {
         })
     }
 
-    handleDetailsClick = (ele) => {
+    handleClick = (event) => {
+        event.preventDefault()
         console.log(this.state.tokenVar._id)
-        axios.get(`/token/${this.state.tokenVar._id}/${ele.id}`)
+        axios.get(`/token/${this.state.tokenVar._id}/${this.state.singleDogId}`)
         .then(response => {
-            this.setState({
-                currentDog: response.data
-            })
+            console.log('in this route')
         })
         
     }
-    
 
     render() { 
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
-    
+        if (this.state.dogList) {
+            var myObj = this.state.dogList.animals.map((ele, id) => <p key={id}>{ele.name}</p>)
+        } else {
+            var myObj = 'loading'
+        }
         return ( 
             <div>
-                <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
-                <SelectedDog dog={this.state.currentDog} />
+                <p>Hit the dogs route</p>
+                {myObj}
+                <button onClick={this.handleClick}>find one dog</button>
             </div>
         );
     }
 }
 
-
-
-    export default AllDogs;
+export default AllDogs;

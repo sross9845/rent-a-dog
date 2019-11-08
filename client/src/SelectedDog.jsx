@@ -9,7 +9,7 @@ class SelectedDog extends Component {
         if (this.props.dog){
             var dogInfo = (
                     <div>
-                        <p>{this.props.dog.description}</p>
+                        <p>{this.props.dog.animal.description}</p>
                     </div>
             )
         } 

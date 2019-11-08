@@ -26,23 +26,21 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
         Token.findById(req.params.id, (err, token) => {
+            console.log(`token ${req.params.id}`)
             axios.get('https://api.petfinder.com/v2/animals', {headers: {
             Authorization: `Bearer ${token.token}`
         }}).then(response => {
+            console.log(`------------------------------- in the post token stage`)
             res.send(response.data)
         })
+        })
     })
-})
 
 router.get('/:tid/:did', (req, res) => {
     Token.findById(req.params.tid, (err, token) => {
-        console.log(req.params.tid, req.params.did)
         axios.get(`https://api.petfinder.com/v2/animals/${req.params.did}`, {headers: {
-            Authorization: `Bearer ${token.token}`
-        }}).then(response => {
-            console.log(response.data)
-            res.send(response.data)
-        })
+            Authorization: `Bearer ${token}`
+        }})
     })
 })    
 
