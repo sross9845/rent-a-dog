@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import DogList from './DogList'
+import SelectedDog from './SelectedDog'
 class AllDogs extends Component {
     state = {
         tokenVar: null,
-        dogList: null
+        dogList: null,
+        currentDog: null
     }
 
     componentDidMount = () => {
@@ -24,19 +26,26 @@ class AllDogs extends Component {
         })
     }
 
+    handleDetailsClick = (ele) => {
+        console.log (ele.name)
+        // const url = `https://api.petfinder.com/v2/animals/${ele.id}`
+        // axios.get(url).then(response => {
+        //   this.setState({
+        //     currentDog: response.data
+        //   })
+        // })
+      }
+    
+
     render() { 
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
-        if (this.state.dogList) {
-            var myObj = this.state.dogList.animals.map((ele, id) => <p>{ele.url}</p>)
-        } else {
-            var myObj = 'loading'
-        }
+        
         return ( 
             <div>
-                <p>Hit the dogs route</p>
-                {myObj}
-            </div>
+           <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
+           <SelectedDog dog={this.state.currentDog} />
+           </div>
         );
     }
 }

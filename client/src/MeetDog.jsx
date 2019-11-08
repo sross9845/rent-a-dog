@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class MeetDog extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
     render() { 
         return ( 
             <div>
@@ -13,5 +9,5 @@ class MeetDog extends Component {
          );
     }
 }
- 
+
 export default MeetDog;
