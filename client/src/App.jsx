@@ -11,7 +11,7 @@ import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 
 class App extends Component {
@@ -92,7 +92,7 @@ class App extends Component {
     return ( 
       <div>
         <Router>
-        <nav><Link to='/'>HOME</Link>{' | '}<Link to='/dogs'>DOGS</Link>{' | '}<Link to='/create'>CREATE</Link>{' | '}<Link to='/saved'>SAVED</Link>{' | '}<Link to='/profile'>PROFILE</Link>{' | '}</nav>
+        <nav><NavLink className='navlink' to='/'>HOME</NavLink>{' | '}<NavLink className='navlink' to='/dogs'>DOGS</NavLink>{' | '}<NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/profile'>PROFILE</NavLink></nav>
           <Route exact path='/' component={Home} />
           <Route exact path='/dogs' component={AllDogs} />
           <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
