@@ -37,10 +37,10 @@ router.get('/:id', (req, res) => {
 router.get('/:tid/:did', (req, res) => {
     Token.findById(req.params.tid, (err, token) => {
         console.log(req.params.tid, req.params.did)
-        axios.get(`https://api.petfinder.com/v2/animals/${req.params.did}`, {headers: {
+        axios.get(`https://api.petfinder.com/v2/types`, {headers: {
             Authorization: `Bearer ${token.token}`
         }}).then(response => {
-            console.log(response.data)
+            console.log(`------------------------------- in the post token stage`)
             res.send(response.data)
         })
     })

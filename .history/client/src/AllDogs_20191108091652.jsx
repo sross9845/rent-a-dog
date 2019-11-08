@@ -5,7 +5,7 @@ class AllDogs extends Component {
     state = {
         tokenVar: null,
         dogList: null,
-        singleDogId: '124',
+        singleDogId: '5',
     }
 
     componentDidMount = () => {
@@ -39,7 +39,7 @@ class AllDogs extends Component {
         console.log(this.state.tokenVar)
         console.log(this.state.dogList)
         if (this.state.dogList) {
-            var myObj = this.state.dogList.animals.map((ele, id) => <p key={id}>{ele.name}</p>)
+            var myObj = this.state.dogList.animals.map((ele, id) => <p>{ele.name}</p>)
         } else {
             var myObj = 'loading'
         }
