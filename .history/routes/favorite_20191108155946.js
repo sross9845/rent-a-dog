@@ -8,8 +8,8 @@ const User = require('../models/user');
         User.findById(req.body.userID, (err, user) => {
             user.favoriteDogs.push({
                 apiID: req.body.apiID,
-                name: req.body.name,
-                photo: req.body.photo
+                name: req.params.name,
+                photo: req.params.photo
             })
             user.save()
             console.log(user.favoriteDogs)

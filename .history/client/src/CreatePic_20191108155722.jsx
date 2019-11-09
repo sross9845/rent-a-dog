@@ -37,14 +37,13 @@ class CreatePic extends Component {
 
     handleClick = (event) => {
         event.preventDefault(); 
-        let mypicture = event.target.photo.value.toString()
-        console.log(mypicture.toString())
-        console.log(typeof(mypicture))
+        let mypicture = event.target.photo.value
+        console.log(mypicture)
         axios.post(`/favourite/savephoto`, {
-            photo: mypicture,
+            pictureURL: mypicture,
             userID: this.props.user._id,
             name: event.target.name.value,
-            apiID: event.target.id.value
+            apiID: event.target.id.value}
         })
     }
 

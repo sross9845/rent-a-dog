@@ -29,7 +29,7 @@ class SavedPics extends Component {
     render() { 
         if (this.state.dogList) {
             console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((ele, id) => <p key={id}>{ele.name}<img src={ele.photo}></img></p>)
+            var mappedDogs = this.state.dogList.map((ele, id) => <p key={id}>{ele.name}</p>)
         } else {
             var mappedDogs = 'loading favourites'
         }

@@ -9,7 +9,7 @@ class DogList extends Component {
     render() { 
         if (this.props.dogList) {
             var myObj = this.props.dogList.animals.map((ele, id) => {
-                if(ele.photos.length > 0){
+                if(ele.photos.length >= 0){
                     return (
                     <DogRow ele={ele} handleDetailsClick={() => this.props.handleClick(ele)}/>
                     )
@@ -22,8 +22,8 @@ class DogList extends Component {
             <div className="sidebar">
             {myObj}
             </div>
-        );
+         );
     }
 }
-
+ 
 export default DogList;
