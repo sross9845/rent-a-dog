@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
-// Favorite Dogs Schema with photo
+// Favorite Dogs Schema with photot
 var favoriteDogsSchema = new mongoose.Schema({
     name: String,
     apiID: {type: String, unique: true, dropDups: true, required : true},
