@@ -99,21 +99,21 @@ class Home extends Component {
             )
         } else if (this.state.login){
             contents = (
-            <div>
+            <div  className="layer">
             <Login liftToken={this.liftToken} /> 
             <button onClick={this.handleLoginClick}> Sign Up Instead!</button>
             </div>
             )
         } else{
             contents = (
-                <div>
+                <div className="layer">
                 <SignUp liftToken={this.liftToken} />
                 <button onClick={this.handleLoginClick}> Login Instead!</button>
                 </div>
                 )
         }
         return ( 
-            <div className='App'>
+            <div className='App layer full'>
             <h1>Rent a Dog</h1>
             <h2>The RADdest app out there</h2>
             {contents}
