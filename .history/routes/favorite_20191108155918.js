@@ -5,11 +5,11 @@ const User = require('../models/user');
     // Post new favourite dog to database
     router.post('/savephoto', (req, res) => {
         console.log(req.body)
-        User.findById(req.body.userID, (err, user) => {
+        User.findById(req.params.uid, (err, user) => {
             user.favoriteDogs.push({
-                apiID: req.body.apiID,
-                name: req.body.name,
-                photo: req.body.photo
+                apiID: req.params.id,
+                name: req.params.name,
+                photo: req.params.photo
             })
             user.save()
             console.log(user.favoriteDogs)

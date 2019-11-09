@@ -6,6 +6,8 @@ class CreatePic extends Component {
     state = { 
         tokenVar: null,
         dogList: null,
+        name: '',
+        id: '',
         photo: [],
     }
 
@@ -28,41 +30,31 @@ class CreatePic extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        let myPhotoArray = [...e.target.photo.value]
+        let myPhotoArray = [...event.target.photo.value]
         this.setState({
             photo : myPhotoArray
         })
-        console.log(this.state.photo)
     }
 
     handleClick = (event) => {
         event.preventDefault(); 
-        let mypicture = event.target.photo.value.toString()
-        console.log(mypicture.toString())
-        console.log(typeof(mypicture))
-        axios.post(`/favourite/savephoto`, {
-            photo: mypicture,
-            userID: this.props.user._id,
-            name: event.target.name.value,
-            apiID: event.target.id.value
+        console.log(this.state.photo)
+        this.setState({
+            name : event.target.name.value
         })
+        console.log(this.props.user)
+        axios.post(`/favourite/${this.props.user._id}/${event.target.name.value}/${event.target.id.value}`)
     }
 
     render() { 
         if (this.state.dogList) {console.log(this.state.dogList)}
         if (this.state.dogList) {
-            var mappedDogs = this.state.dogList.animals.map((ele, id) => {
-                if(ele.photos.length > 0) {
-                    return (  
-                        <form onSubmit={this.handleClick} key={id}><p>{ele.name}</p>
-                        <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
-                        <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
-                        <input type="hidden" name="photo" value={ele.photos[0].large} onChange={this.handleChange}/>
-                        <input type="submit" value="Favorite This Dog!"/>
-                        </form>)}
-                        console.log(ele.photos.length)
-                })
-
+            var mappedDogs = this.state.dogList.animals.map((ele, id) => <form onSubmit={this.handleClick} ><p key={id}>{ele.name}</p>
+                                                                    <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
+                                                                    <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
+                                                                    <input type="hidden" name="photo" value={ele.photos} onChange={this.handleChange}/>
+                                                                    <input type="submit" value="Favorite This Dog!"/>
+                                                                    </form>)
         } else {
             var mappedDogs = 'Loading'
         }
