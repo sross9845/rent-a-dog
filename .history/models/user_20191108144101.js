@@ -4,8 +4,7 @@ const bcrypt = require('bcrypt')
 // Favorite Dogs Schema
 var favoriteDogsSchema = new mongoose.Schema({
     name: String,
-    apiID: {type: String, unique: true, dropDups: true, required : true},
-    photo: String,
+    apiID: {type: String, unique: true, dropDups: true, required : true}
 });
 
 // Declare the Schema of the Mongo model

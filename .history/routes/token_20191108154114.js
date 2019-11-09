@@ -28,7 +28,7 @@ const axios = require('axios');
     // Route to /tokens/TokenId --> grabs all the animals
     router.get('/:id', (req, res) => {
         Token.findById(req.params.id, (err, token) => {
-            axios.get('https://api.petfinder.com/v2/animals?limit=100&type=dog', {headers: {
+            axios.get('https://api.petfinder.com/v2/animals?type=dog&limit=100', {headers: {
             Authorization: `Bearer ${token.token}`
             }}).then(response => {
                 res.send(response.data)
