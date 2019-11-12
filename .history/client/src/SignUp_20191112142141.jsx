@@ -46,8 +46,8 @@ class SignUp extends Component {
                 <input type='submit' value='Sign Up!' />
                 </form>
             </div>
-        );
+         );
     }
 }
-
+ 
 export default SignUp;

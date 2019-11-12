@@ -9,7 +9,7 @@ class SignUp extends Component {
             email: '',
             password: '',
             message: ''
-        }
+         }
     }
     handleChange = (e) => {
         this.setState({
@@ -46,8 +46,8 @@ class SignUp extends Component {
                 <input type='submit' value='Sign Up!' />
                 </form>
             </div>
-        );
+         );
     }
 }
-
+ 
 export default SignUp;
