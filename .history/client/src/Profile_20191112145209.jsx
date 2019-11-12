@@ -76,9 +76,9 @@ class Profile extends Component {
                 <div>
                     <p> Hit the profile route</p>
                     <form onSubmit={this.handleSubmit}>
-                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.user.name}/><br />
-                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.user.password}/> <br />
-                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.user.email}/> <br />
+                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.name}/><br />
+                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.password}/> <br />
+                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.email}/> <br />
                     <input type='submit' value='Update Profile!' />
                     </form>
                 </div>

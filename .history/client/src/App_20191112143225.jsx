@@ -76,6 +76,7 @@ class App extends Component {
     })
   }
 
+
   checkForLocalToken = () => {
     //look for token in local storage
     let token = localStorage.getItem('mernToken')
@@ -160,7 +161,7 @@ class App extends Component {
       <div>
         <Router>
         <nav><img className='logo' src='https://i.imgur.com/cvN4hi9.png' ></img><NavLink className='navlink' to='/'>HOME</NavLink>{' | '}<NavLink className='navlink' to='/dogs'>DOGS</NavLink>{' | '}<NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink></nav>
-          <Route exact path='/' render={() => <Home user={this.state.user} logOut={this.logOut} liftToken={this.liftToken} handleLoginClick={this.handleLoginClick} login={this.state.login}/> } />
+          <Route exact path='/' render={() => <Home user={this.state.user} logOut={this.logOut} liftToken={this.liftToken} handleLoginClick={this.handleLoginClick}/> } />
           <Route exact path='/dogs' component={AllDogs} />
           <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
           <Route exact path='/meet' render={() => <MeetDog user={this.state.user}/> } />
