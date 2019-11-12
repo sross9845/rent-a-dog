@@ -86,7 +86,7 @@ class Profile extends Component {
                 </div>
 
 
-                // Adding a profile picture
+                {/* // Adding a profile picture */}
 
                     <h1>Upload Image</h1>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
