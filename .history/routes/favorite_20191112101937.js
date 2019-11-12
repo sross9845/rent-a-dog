@@ -25,7 +25,7 @@ const User = require('../models/user');
             subID.remove();
             user.save()
             console.log(user.favoriteDogs)
-            res.json(user.favoriteDogs)
+            
         })
     })
 

@@ -17,7 +17,7 @@ class SavedPics extends Component {
             console.log(response.data)
         })
         if (this.props.user) {
-            axios.get(`/favourite/getuser/random/${this.props.user._id}`)
+            axios.get(`/favourite/${this.props.user._id}`)
             .then(response => {
                 this.setState({
                     dogList: response.data.favoriteDogs
@@ -28,13 +28,7 @@ class SavedPics extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(event.target.id.value)
-        axios.get(`/favourite/${this.props.user._id}/${event.target.id.value}`)
-        .then( response => {
-            this.setState({
-                dogList: response.data
-            })
-        })
+        cconsole.log(event.name.id)
     }
 
     render() { 
@@ -42,7 +36,6 @@ class SavedPics extends Component {
             console.log(this.state.dogList)
             var mappedDogs = this.state.dogList.map((ele, id) => <form onSubmit={this.handleSubmit}><p key={id}>{ele.name}<img src={ele.photo}></img></p>
                                                                     <input type="hidden" name="id" value={ele._id}/>
-                                                                    <input type="submit" value="Delete"/>
                                                                     </form>)
         } else {
             var mappedDogs = 'loading favourites'

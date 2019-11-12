@@ -10,8 +10,8 @@ class DogRow extends Component {
             <div onClick={this.props.handleDetailsClick} className="sideBarDiv">
                 <p>{this.props.ele.name}</p>
             </div>
-        );
+         );
     }
 }
-
+ 
 export default DogRow;

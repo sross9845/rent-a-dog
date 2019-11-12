@@ -16,27 +16,23 @@ const User = require('../models/user');
         })
     })
 
-    // Delete a favourite
-    router.get('/:uid/:id', (req, res) => {
-        console.log('====================== hit the delete Route =============================')
-        User.findById(req.params.uid, (err, user) => {
-            console.log('inside attempted delete part')
-            let subID = user.favoriteDogs.id(req.params.id);
-            subID.remove();
-            user.save()
-            console.log(user.favoriteDogs)
-            res.json(user.favoriteDogs)
-        })
-    })
-
     // Retrieve all favourited dogs from database
-    router.get('/getuser/random/:uid', (req, res) => {
+    router.get('/:uid', (req, res) => {
         console.log('-------------------------- hitting the get favorites route', req.params.uid)
         User.findById(req.params.uid, (err, user) => {
             res.json(user)
         })
     })
 
+    // Delete a favourite
+    router.delete('/:uid/:id', (req, res) => {
+        console.log('====================== hit the delete Route =============================')
+        User.findById(req.params.uid, (err, user) => {
+            user.favoriteDogs.findOneAndDelete({_id: req.params.id}, (err, user) => {
+                res.json(user.favoriteDogs)
+            })
+        })
+    })
 
 
 module.exports = router;
