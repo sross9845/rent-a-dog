@@ -22,7 +22,7 @@ db.on('error', (err) => {
 app.use('/auth', require('./routes/auth'))
 app.use('/token', require('./routes/token'))
 app.use('/favourite', require('./routes/favorite'))
-app.use('/meet', require('./routes/meet'))
+app.use('/meet', require('./routes/favorite'))
 
 app.use('/locked',
     expressJWT({secret: process.env.JWT_SECRET}).unless({method: 'POST'}),

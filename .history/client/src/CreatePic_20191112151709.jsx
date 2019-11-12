@@ -25,7 +25,7 @@ class CreatePic extends Component {
                 console.log(this.props.user)
                 axios.get(`/meet/${this.props.user._id}`)
                 .then(response => {
-                    console.log(response)
+                    console.log(response.data)
                     this.setState({
                         userDetails: response.data
                     })

@@ -6,7 +6,6 @@ class CreatePic extends Component {
     state = { 
         tokenVar: null,
         dogList: null,
-        userDetails: null,
     }
 
     componentDidMount = () => {
@@ -21,16 +20,6 @@ class CreatePic extends Component {
                     dogList: response.data
                 })
             })
-            if (this.props.user) {
-                console.log(this.props.user)
-                axios.get(`/meet/${this.props.user._id}`)
-                .then(response => {
-                    console.log(response)
-                    this.setState({
-                        userDetails: response.data
-                    })
-                })
-            }
         })
     }
 
@@ -62,8 +51,9 @@ class CreatePic extends Component {
     }
 
     render() { 
-        if (this.state.userDetails) {
-            var myPhoto = <img src={this.state.userDetails.photo}></img>
+        if (this.state.dogList) {console.log(this.state.dogList)}
+        if (this.props.user) {
+            var myPhoto = <img src={this.props.user.photo}></img>
         } else {
             var myPhoto = 'loading'
         }
@@ -82,6 +72,7 @@ class CreatePic extends Component {
                         <input type="hidden" name="contactState" value={ele.contact.address.state} onChange={this.handleChange}/>
                         <input type="submit" value="Favorite This Dog!"/>
                         </form>)}
+                        console.log(ele.photos.length)
                 })
 
         } else {
@@ -91,7 +82,6 @@ class CreatePic extends Component {
             <div>
                 <h1> Hit the create pic route</h1>
                 <h3>pick a favorite Dog!</h3>
-                {myPhoto}
                     {mappedDogs}
             </div>
         );

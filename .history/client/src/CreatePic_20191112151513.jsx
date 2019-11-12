@@ -22,10 +22,8 @@ class CreatePic extends Component {
                 })
             })
             if (this.props.user) {
-                console.log(this.props.user)
                 axios.get(`/meet/${this.props.user._id}`)
                 .then(response => {
-                    console.log(response)
                     this.setState({
                         userDetails: response.data
                     })
@@ -62,8 +60,9 @@ class CreatePic extends Component {
     }
 
     render() { 
+        if (this.state.dogList) {console.log(this.state.dogList)}
         if (this.state.userDetails) {
-            var myPhoto = <img src={this.state.userDetails.photo}></img>
+            var myPhoto = <img src={this.props.user.photo}></img>
         } else {
             var myPhoto = 'loading'
         }
@@ -82,6 +81,7 @@ class CreatePic extends Component {
                         <input type="hidden" name="contactState" value={ele.contact.address.state} onChange={this.handleChange}/>
                         <input type="submit" value="Favorite This Dog!"/>
                         </form>)}
+                        console.log(ele.photos.length)
                 })
 
         } else {
