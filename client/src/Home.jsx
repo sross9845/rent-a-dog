@@ -97,7 +97,7 @@ class Home extends Component {
                 <h2>About Us:</h2>
                 <hr />
                 <div className="homeInfo">
-                <p>Here at Rent a Dog, We strive to make the adoption proccess as RAD as it can be. Click on the links above to get started. The Dogs page will have all the available dogs while the Create page will allow you to create a picture with the dog. Who knows, maybe you will find your best dog friend today here at Rent a Dog!</p>
+                <p>Here at Rent a Dog, we strive to make the adoption proccess as RAD as it can be. Click on the links above to get started. With you by our side we will give these dogs the care and love they want no matter if you rent or adopt. The Dogs page will have all the available dogs while the Create page will allow you to create a picture with the dog. Who knows, maybe you will find your best dog friend today here at Rent a Dog!</p>
                 </div>
                 <button onClick={this.logOut}>Log Out</button>
                 </div>
