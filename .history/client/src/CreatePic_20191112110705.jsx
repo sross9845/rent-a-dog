@@ -48,11 +48,11 @@ class CreatePic extends Component {
             userID: this.props.user._id,
             name: event.target.name.value,
             apiID: event.target.id.value, 
-            status: event.target.status.value,
+            status: event.target.contact.email,
             contactEmail: event.target.contactEmail.value,
-            contactPhone: event.target.contactPhone.value,
-            contactCity: event.target.contactCity.value,
-            contactState: event.target.contactState.value,
+            contactPhone: event.target.contact.value,
+            contactCity: event.target.contact.value,
+            contactState: event.target.contact.value,
         })
     }
 

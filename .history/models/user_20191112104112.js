@@ -6,11 +6,6 @@ var favoriteDogsSchema = new mongoose.Schema({
     name: String,
     apiID: {type: String, unique: true, dropDups: true, required : true},
     photo: String,
-    email: String,
-    phone: String,
-    status: String,
-    city: String,
-    state: String
 });
 
 // Declare the Schema of the Mongo model

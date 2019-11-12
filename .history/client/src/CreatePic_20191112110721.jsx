@@ -52,7 +52,7 @@ class CreatePic extends Component {
             contactEmail: event.target.contactEmail.value,
             contactPhone: event.target.contactPhone.value,
             contactCity: event.target.contactCity.value,
-            contactState: event.target.contactState.value,
+            contactState: event.target.contact.value,
         })
     }
 

@@ -10,11 +10,13 @@ const User = require('../models/user');
                 apiID: req.body.apiID,
                 name: req.body.name,
                 photo: req.body.photo,
-                email: req.body.contactEmail,
-                phone: req.body.contactPhone,
-                city: req.body.contactCity,
-                state: req.body.contactState,
-                status: req.body.status
+                contact.push({
+                    email: req.body.contactEmail,
+                    phone: req.body.contactPhone,
+                    city: req.body.contactCity,
+                    state: req.body.contactState,
+                    status: req.body.status
+                })
             })
             user.save()
             console.log(user.favoriteDogs)

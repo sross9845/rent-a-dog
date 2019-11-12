@@ -10,6 +10,8 @@ const User = require('../models/user');
                 apiID: req.body.apiID,
                 name: req.body.name,
                 photo: req.body.photo,
+            }),
+            contact.push({
                 email: req.body.contactEmail,
                 phone: req.body.contactPhone,
                 city: req.body.contactCity,

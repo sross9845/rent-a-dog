@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+
+var contactSchema = new mongoose.Schema({
+
+})
+
 // Favorite Dogs Schema with photo
 var favoriteDogsSchema = new mongoose.Schema({
     name: String,

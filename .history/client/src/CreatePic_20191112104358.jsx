@@ -37,22 +37,16 @@ class CreatePic extends Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        console.log(event.target.contactEmail.value)
-        console.log(event.target.contactPhone.value)
-        console.log(event.target.status.value)
-        console.log(event.target.contactCity.value)
-        console.log(event.target.contactState.value)
+        console.log(this.props.user) 
         let mypicture = event.target.photo.value.toString()
+        console.log(mypicture.toString())
+        console.log(typeof(mypicture))
         axios.post(`/favourite/savephoto`, {
             photo: mypicture,
             userID: this.props.user._id,
             name: event.target.name.value,
             apiID: event.target.id.value, 
-            status: event.target.status.value,
-            contactEmail: event.target.contactEmail.value,
-            contactPhone: event.target.contactPhone.value,
-            contactCity: event.target.contactCity.value,
-            contactState: event.target.contactState.value,
+
         })
     }
 
@@ -66,11 +60,7 @@ class CreatePic extends Component {
                         <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
                         <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
                         <input type="hidden" name="photo" value={ele.photos[0].large} onChange={this.handleChange}/>
-                        <input type="hidden" name="contactEmail" value={ele.contact.email} onChange={this.handleChange}/>
-                        <input type="hidden" name="contactPhone" value={ele.contact.phone} onChange={this.handleChange}/>
-                        <input type="hidden" name="status" value={ele.status} onChange={this.handleChange}/>
-                        <input type="hidden" name="contactCity" value={ele.contact.address.city} onChange={this.handleChange}/>
-                        <input type="hidden" name="contactState" value={ele.contact.address.state} onChange={this.handleChange}/>
+                        <input type="hidden" name="contact" value={ele.contact} onChange={this.handleChange}/>
                         <input type="submit" value="Favorite This Dog!"/>
                         </form>)}
                         console.log(ele.photos.length)

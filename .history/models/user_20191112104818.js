@@ -1,16 +1,19 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+
+var contactSchema = new mongoose.Schema({
+    email: String,
+    phone: String,
+    status: String
+})
+
 // Favorite Dogs Schema with photo
 var favoriteDogsSchema = new mongoose.Schema({
     name: String,
     apiID: {type: String, unique: true, dropDups: true, required : true},
     photo: String,
-    email: String,
-    phone: String,
-    status: String,
-    city: String,
-    state: String
+    contact: []
 });
 
 // Declare the Schema of the Mongo model

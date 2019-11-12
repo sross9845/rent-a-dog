@@ -27,16 +27,12 @@ class MeetDog extends Component {
 
 
     render() { 
-        if (this.state.dogList) {
-            console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((ele, id) => <ul><li key={id}>{ele.name}</li><li>{ele.status}</li><li>{ele.email}</li><li>{ele.phone}</li><li>{ele.state}</li><li>{ele.city}</li></ul>)
-        } else {
-            var mappedDogs = 'Loading Adopt Data'
-        }
+        console.log(this.state.dogList)
+        console.log(this.props.user)
         return ( 
             <div>
                 <p> Adopt Your Favorite Pet!</p>
-                    {mappedDogs}
+
             </div>
         );
     }

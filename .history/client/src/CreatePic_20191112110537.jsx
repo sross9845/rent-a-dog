@@ -41,18 +41,15 @@ class CreatePic extends Component {
         console.log(event.target.contactPhone.value)
         console.log(event.target.status.value)
         console.log(event.target.contactCity.value)
-        console.log(event.target.contactState.value)
+        console.log(event.target.contact.value)
+        console.log(event.target.contact.value)
         let mypicture = event.target.photo.value.toString()
         axios.post(`/favourite/savephoto`, {
             photo: mypicture,
             userID: this.props.user._id,
             name: event.target.name.value,
             apiID: event.target.id.value, 
-            status: event.target.status.value,
-            contactEmail: event.target.contactEmail.value,
-            contactPhone: event.target.contactPhone.value,
-            contactCity: event.target.contactCity.value,
-            contactState: event.target.contactState.value,
+            // contactEmail: event.target.contact.email
         })
     }
 
