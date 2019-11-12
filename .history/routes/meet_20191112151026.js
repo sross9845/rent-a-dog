@@ -3,10 +3,9 @@ const router = express.Router();
 const User = require('../models/user');
 const axios = require('axios');
 
-router.get('/:id', (req, res) => {
-    console.log(`--------------------------- in the meet route`)
-    User.findById(req.params.id, (err, user) => {
-        res.json(user)
+router.get('/meet/:id', (req, res) => {
+    User.findById(req.params.uid, (err, user) => {
+        res.json()
     })
 })
 
