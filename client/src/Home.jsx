@@ -63,20 +63,7 @@ class Home extends Component {
             user: null,
           })
         }
-      
-        handleClick = () => {
-          let config = {
-            headers: {
-              Authorization: `Bearer ${this.state.token}`
-            }
-          }
-          axios.get('/locked/test', config)
-          .then(response => {
-            this.setState({
-              lockedResult: response.data
-            })
-          })
-        }
+        
         handleLoginClick = () => {
             if (this.state.login){
                 this.setState({
