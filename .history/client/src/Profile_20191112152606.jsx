@@ -8,18 +8,13 @@ class Profile extends Component {
         password: '',
         favoriteBreed: '',
         image: '',
-        loading: false,
-        name: ''
+        loading: false
     }
 
     componentDidMount = () => {
-        if (this.props.user) {
-            this.setState({
-                email: this.props.user.email,
-                password: this.props.user.password,
-                name: this.props.user.name
-            })
-        }
+        this.setState({
+            
+        })
     }
 
     handleChange = (e) => {

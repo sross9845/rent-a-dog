@@ -8,8 +8,7 @@ class Profile extends Component {
         password: '',
         favoriteBreed: '',
         image: '',
-        loading: false,
-        name: ''
+        loading: false
     }
 
     componentDidMount = () => {
@@ -17,7 +16,7 @@ class Profile extends Component {
             this.setState({
                 email: this.props.user.email,
                 password: this.props.user.password,
-                name: this.props.user.name
+                
             })
         }
     }
