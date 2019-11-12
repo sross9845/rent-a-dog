@@ -8,18 +8,13 @@ class Profile extends Component {
         password: '',
         favoriteBreed: '',
         image: '',
-        loading: false,
-        name: ''
+        loading: false
     }
 
     componentDidMount = () => {
-        if (this.props.user) {
-            this.setState({
-                email: this.props.user.email,
-                password: this.props.user.password,
-                name: this.props.user.name
-            })
-        }
+        this.setState({
+            
+        })
     }
 
     handleChange = (e) => {
@@ -95,7 +90,7 @@ class Profile extends Component {
                 </div>
 
 
-                {/* // Adding a profile picture */}
+                // Adding a profile picture
 
                     <h1>Upload Image</h1>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
