@@ -9,6 +9,12 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: whitesmoke;
+  font-family: 'Arimo', sans-serif;
+  padding-top: 72px;
+}
+
+hr{
+  border-color: white;
 }
 
 .largePic{
@@ -16,6 +22,7 @@ body {
   width:300px;
   margin: 0 auto;
   display:block;
+  border: 2px outset white;
 }
 
 .full{
@@ -55,13 +62,20 @@ body {
 
 }
 
+.homeInfo{
+  font-size: 2em;
+  color: white;
+}
+
 nav{
   margin: 0;
   padding: 0;
-  height: 20%;
   background: linear-gradient(to top, #04286E, #080945);
   color: white;
   font-size: 2em;
+  position: fixed;
+  top: 0;
+  width:100%;
 }
 
 form input{
@@ -73,6 +87,7 @@ form input{
   margin: 1em;
   text-decoration: none;
   line-height: 50px;
+  font-family: 'Lato', sans-serif;
 }
 
 .layer{
