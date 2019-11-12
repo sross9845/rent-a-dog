@@ -23,9 +23,7 @@ const User = require('../models/user');
             console.log('inside attempted delete part')
             let subID = user.favoriteDogs.id(req.params.id);
             subID.remove();
-            user.save()
             console.log(user.favoriteDogs)
-            res.json(user.favoriteDogs)
         })
     })
 

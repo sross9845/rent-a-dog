@@ -20,12 +20,9 @@ const User = require('../models/user');
     router.get('/:uid/:id', (req, res) => {
         console.log('====================== hit the delete Route =============================')
         User.findById(req.params.uid, (err, user) => {
-            console.log('inside attempted delete part')
-            let subID = user.favoriteDogs.id(req.params.id);
-            subID.remove();
-            user.save()
-            console.log(user.favoriteDogs)
-            res.json(user.favoriteDogs)
+            user.favoriteDogs.findOneAndDelete({_id: req.params.id}, (err, user) => {
+                res.json(user.favoriteDogs)
+            })
         })
     })
 
