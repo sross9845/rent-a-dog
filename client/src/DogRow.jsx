@@ -8,7 +8,7 @@ class DogRow extends Component {
     render() { 
         return ( 
             <div onClick={this.props.handleDetailsClick} className="sideBarDiv">
-                <p>{this.props.ele.name}</p>
+                <p>{this.props.ele.name.toUpperCase()}</p>
             </div>
         );
     }

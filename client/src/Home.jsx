@@ -93,7 +93,12 @@ class Home extends Component {
           if(this.state.user){
             contents =(
                 <div>
-                <p>Hello, {this.state.user.name}</p>
+                <hr />
+                <h2>About Us:</h2>
+                <hr />
+                <div className="homeInfo">
+                <p>Here at Rent a Dog, We strive to make the adoption proccess as RAD as it can be. Click on the links above to get started. The Dogs page will have all the available dogs while the Create page will allow you to create a picture with the dog. Who knows, maybe you will find your best dog friend today here at Rent a Dog!</p>
+                </div>
                 <button onClick={this.logOut}>Log Out</button>
                 </div>
             )
@@ -116,7 +121,7 @@ class Home extends Component {
             <div className='App layer full '>
             <div className='homeContents'>
             <h1 className="title"><u>Rent a Dog</u></h1>
-            <h3>The RADdest app out there</h3>
+            <h3>The RADdest App Around</h3>
             {contents}
             </div>
             </div> 
