@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login'
 import SignUp from './SignUp'
 import axios from 'axios'
+import Carousel from 'react-bootstrap/Carousel'
 
 class Home extends Component {
     state = { 
@@ -99,24 +100,26 @@ class Home extends Component {
             )
         } else if (this.state.login){
             contents = (
-            <div  className="layer">
+            <div className="Login">
             <Login liftToken={this.liftToken} /> 
             <button onClick={this.handleLoginClick}> Sign Up Instead!</button>
             </div>
             )
         } else{
             contents = (
-                <div className="layer">
+                <div className="Signup">
                 <SignUp liftToken={this.liftToken} />
                 <button onClick={this.handleLoginClick}> Login Instead!</button>
                 </div>
                 )
         }
         return ( 
-            <div className='App layer full'>
-            <h1>Rent a Dog</h1>
-            <h2>The RADdest app out there</h2>
+            <div className='App layer full '>
+            <div className='homeContents'>
+            <h1 className="title"><u>Rent a Dog</u></h1>
+            <h3>The RADdest app out there</h3>
             {contents}
+            </div>
             </div> 
         );
     }

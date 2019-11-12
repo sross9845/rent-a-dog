@@ -10,7 +10,9 @@ class SelectedDog extends Component {
             var dogInfo = (
                     <div className='doginfoafter'>
                         <img className="largePic" src={this.props.dog.animal.photos[0].large}></img>
-                        <p>{this.props.dog.animal.description}</p>
+                        <p>Breed: {this.props.dog.animal.breeds.primary}</p>
+                        <p>Gender: {this.props.dog.animal.gender}</p>
+                        <p>Size: {this.props.dog.animal.size}</p>
                     </div>
             )
         } 
