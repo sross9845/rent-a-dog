@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('https://images.unsplash.com/photo-1546421845-6471bdcf3edf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  color: black;
+}
+
+.largePic{
+  height:300px;
+  width:300px;
+  margin: 0 auto;
+  display:block;
+}
+
+.full{
+  height: 100vh;
+}
+
+.contain{
+  display: flex;
+  height:100vh;
+}
+
+.sideBarDiv {
+  border: 2px outset white;
+  background: rgba(0, 0, 0, 0.472);
+}
+
+.sidebar{
+  width: 25%;
+  height:100vh;
+  overflow-y: scroll;
+  font-size: 2em;
+}
+
+.selected{
+  flex-grow: 1;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  height: 100vh;
+  width: 75%
+}
+.doginfobefore{
+  font-size: 4em;
+}
+.doginfoafter{
+  font-size: 3em;
+
+}
+
+nav{
+  margin: 0;
+  padding: 0;
+  height: 20%;
+  background: linear-gradient(to top, #04286E, #080945);
+  color: white;
+  font-size: 2em;
+}
+
+form input{
+  margin: 5px;
+}
+
+.navlink{
+  color: white;
+  margin: 1em;
+  text-decoration: none;
+  line-height: 50px;
+}
+
+.layer{
+  background-color: rgba(19, 19, 17, 0.726);
+}
+
+.homeContents{
+  width: 40%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Login{
+  margin: 1em auto;
+  border: 4px outset white;
+  padding: 4em;
+  background: rgba(0, 0, 0, 0.472)
+}
+.Signup{
+  margin: 1em auto;
+  border: 4px outset white;
+  padding: 4em;
+  background: rgba(0, 0, 0, 0.472)
+}
+
+.title{
+  margin: 0px;
+  padding: 10px 0;
+}
+
+.logo {
+height: 75px;
+width: 85px;
+border-radius: 25%;
+margin-left: .25em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import SignUp from './SignUp';
 import Login from './Login'
-import SignUp from './SignUp'
-import axios from 'axios'
 
 class Home extends Component {
+<<<<<<< HEAD
     state = { 
           token: '',
           user: null,
@@ -114,6 +114,42 @@ class Home extends Component {
             </div> 
         );
     }
+=======
+  render () {
+    let contents;
+    if(this.props.user){
+      contents =(
+          <div>
+          <p>Hello, {this.props.user.name}</p>
+          <button onClick={this.props.logOut}>Log Out</button>
+          </div>
+      )
+  } else if (this.props.login){
+      contents = (
+      <div className="Login">
+      <Login liftToken={this.props.liftToken} /> 
+      <button onClick={this.props.handleLoginClick}> Sign Up Instead!</button>
+      </div>
+      )
+  } else {
+      contents = (
+          <div className="Signup">
+          <SignUp liftToken={this.props.liftToken} />
+          <button onClick={this.props.handleLoginClick}> Login Instead!</button>
+          </div>
+          )
+  }
+    return (
+      <div className='App layer full '>
+        <div className='homeContents'>
+        <h1 className="title"><u>Rent a Dog</u></h1>
+        <h3>The RADdest app out there</h3>
+        {contents}
+        </div>
+      </div> 
+    )
+  }
+>>>>>>> bf15244d2d7fe511970751537e3a4069b1425202
 }
 
 export default Home;
