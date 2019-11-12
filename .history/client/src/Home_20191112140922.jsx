@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import SignUp from './SignUp';
-import Login from './Login'
 
 class Home extends Component {
   render () {
@@ -8,22 +6,22 @@ class Home extends Component {
     if(this.props.user){
       contents =(
           <div>
-          <p>Hello, {this.props.user.name}</p>
-          <button onClick={this.props.logOut}>Log Out</button>
+          <p>Hello, {this.props.name}</p>
+          <button onClick={this.logOut}>Log Out</button>
           </div>
       )
   } else if (this.props.login){
       contents = (
       <div className="Login">
-      <Login liftToken={this.props.liftToken} /> 
-      <button onClick={this.props.handleLoginClick}> Sign Up Instead!</button>
+      <Login liftToken={this.liftToken} /> 
+      <button onClick={this.handleLoginClick}> Sign Up Instead!</button>
       </div>
       )
-  } else {
+  } else{
       contents = (
           <div className="Signup">
-          <SignUp liftToken={this.props.liftToken} />
-          <button onClick={this.props.handleLoginClick}> Login Instead!</button>
+          <SignUp liftToken={this.liftToken} />
+          <button onClick={this.handleLoginClick}> Login Instead!</button>
           </div>
           )
   }

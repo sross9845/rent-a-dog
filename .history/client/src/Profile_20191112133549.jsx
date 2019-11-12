@@ -30,7 +30,6 @@ class Profile extends Component {
             id: this.props.user._id,
             name: this.state.name
         }).then( response => {
-            console.log(response.data)
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
                 // TODO: maybe put this message in state? 

@@ -52,7 +52,7 @@ class CreatePic extends Component {
 
     render() { 
         if (this.state.dogList) {console.log(this.state.dogList)}
-        if (this.props.user) {console.log(this.props.user)}
+        if (this.props.user) {console.log(this.props.user.photo)}
         if (this.state.dogList) {
             var mappedDogs = this.state.dogList.animals.map((ele, id) => {
                 if(ele.photos.length > 0) {

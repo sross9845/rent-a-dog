@@ -19,7 +19,7 @@ class Home extends Component {
       <button onClick={this.props.handleLoginClick}> Sign Up Instead!</button>
       </div>
       )
-  } else {
+  } else{
       contents = (
           <div className="Signup">
           <SignUp liftToken={this.props.liftToken} />

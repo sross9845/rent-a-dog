@@ -7,6 +7,8 @@ import MeetDog from './MeetDog';
 import Profile from './Profile';
 import SavedPics from './SavedPics';
 import axios from 'axios';
+import Login from './Login'
+import SignUp from './SignUp'
 
 import {
   BrowserRouter as Router,
@@ -156,7 +158,6 @@ class App extends Component {
       })
     })
   }
-  
   handleLoginClick = () => {
       if (this.state.login){
           this.setState({
@@ -170,16 +171,46 @@ class App extends Component {
   }
 
   render() { 
+    let contents;
+    if(this.state.user){
+      contents =(
+          <div>
+          <p>Hello, {this.state.user.name}</p>
+          <button onClick={this.logOut}>Log Out</button>
+          </div>
+      )
+  } else if (this.state.login){
+      contents = (
+      <div className="Login">
+      <Login liftToken={this.liftToken} /> 
+      <button onClick={this.handleLoginClick}> Sign Up Instead!</button>
+      </div>
+      )
+  } else{
+      contents = (
+          <div className="Signup">
+          <SignUp liftToken={this.liftToken} />
+          <button onClick={this.handleLoginClick}> Login Instead!</button>
+          </div>
+          )
+  }
     return ( 
       <div>
         <Router>
         <nav><img className='logo' src='https://i.imgur.com/cvN4hi9.png' ></img><NavLink className='navlink' to='/'>HOME</NavLink>{' | '}<NavLink className='navlink' to='/dogs'>DOGS</NavLink>{' | '}<NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink></nav>
-          <Route exact path='/' render={() => <Home user={this.state.user} logOut={this.logOut} liftToken={this.liftToken} handleLoginClick={this.handleLoginClick}/> } />
+          <Route exact path='/' component={Home} />
           <Route exact path='/dogs' component={AllDogs} />
           <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
           <Route exact path='/meet' render={() => <MeetDog user={this.state.user}/> } />
           <Route exact path='/saved' render={() => <SavedPics user={this.state.user}/> } />
           <Route exact path='/profile' render={() => <Profile user={this.state.user} liftToken={this.liftToken}/> } />
+          <div className='App layer full '>
+          <div className='homeContents'>
+          <h1 className="title"><u>Rent a Dog</u></h1>
+          <h3>The RADdest app out there</h3>
+          {contents}
+          </div>
+          </div> 
         </Router>
         </div>
     );

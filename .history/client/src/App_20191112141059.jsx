@@ -156,7 +156,6 @@ class App extends Component {
       })
     })
   }
-  
   handleLoginClick = () => {
       if (this.state.login){
           this.setState({

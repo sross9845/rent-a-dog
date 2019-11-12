@@ -6,12 +6,11 @@ const bcrypt = require('bcrypt')
 
 router.post('/edit', (req, res) => {
     console.log(req.body.id)
-    var password = req.body.password
-    password = bcrypt.hashSync(password, 12)
+    let password = req.body.password
     User.findByIdAndUpdate(req.body.id, {
         name: req.body.name,
         email: req.body.email,
-        password: password,
+        password: req.body.password,
         photo: req.body.photo
     }, (err, user) => {
         if (user) {

@@ -21,7 +21,7 @@ class Profile extends Component {
         e.preventDefault()
         console.log(this.state.email)
         console.log(this.state.name)
-        console.log(this.state.password)
+        console.log(this.state.email)
         console.log(this.state.image)
         axios.post('/auth/edit', {
             email: this.state.email,
@@ -30,7 +30,6 @@ class Profile extends Component {
             id: this.props.user._id,
             name: this.state.name
         }).then( response => {
-            console.log(response.data)
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
                 // TODO: maybe put this message in state? 
@@ -63,6 +62,7 @@ class Profile extends Component {
 
 
     render() { 
+        console.log(`This PropsFor User: ${this.props.user._id}`)
         {var content = this.state.loading ? (
             <h3>Loading...</h3>
                 ) : (

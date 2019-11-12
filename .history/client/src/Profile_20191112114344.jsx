@@ -19,18 +19,13 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.email)
-        console.log(this.state.name)
-        console.log(this.state.password)
-        console.log(this.state.image)
         axios.post('/auth/edit', {
             email: this.state.email,
             password: this.state.password,
-            photo: this.state.image,
+            photo: this.state.photo,
             id: this.props.user._id,
             name: this.state.name
         }).then( response => {
-            console.log(response.data)
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
                 // TODO: maybe put this message in state? 
@@ -59,41 +54,35 @@ class Profile extends Component {
         })
         })
     }
-
-
-
-    render() { 
+    render(){
         {var content = this.state.loading ? (
             <h3>Loading...</h3>
                 ) : (
             <img src={this.state.image} style={{ width: '300px' }} />
         )}
-        if (this.props.user) {
-            var picture = this.props.user
-        } else {
-            var picture = 'Your Picture Here!'
-        }
-        return (
-            <div className="App">
-                <div>
-                    <p> Hit the profile route</p>
-                    <form onSubmit={this.handleSubmit}>
-                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.name}/><br />
-                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.password}/> <br />
-                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.email}/> <br />
-                    <input type='submit' value='Update Profile!' />
-                    </form>
-                </div>
+    return (
+        
+        )
+        }   
+    }
 
 
-                // Adding a profile picture
-
-                    <h1>Upload Image</h1>
-                    <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
-                    {content}
-                    {/* <br /><br /><br /><br /><br />
-                    {picture} */}
+    render() { 
+        return ( 
+            <div>
+                <p> Hit the profile route</p>
+                <form onSubmit={this.handleSubmit}>
+                Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br />
+                Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
+                Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
+                <input type='submit' value='Update Profile!' />
+                </form>
             </div>
+            <div className="App">
+            <h1>Upload Image</h1>
+            <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
+            {content}
+        </div>
         );
     }
 }

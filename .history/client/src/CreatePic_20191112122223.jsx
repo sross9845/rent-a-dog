@@ -6,6 +6,7 @@ class CreatePic extends Component {
     state = { 
         tokenVar: null,
         dogList: null,
+        photo: [],
     }
 
     componentDidMount = () => {

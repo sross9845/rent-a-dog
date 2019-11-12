@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import SignUp from './SignUp';
-import Login from './Login'
 
 class Home extends Component {
   render () {
@@ -19,7 +17,7 @@ class Home extends Component {
       <button onClick={this.props.handleLoginClick}> Sign Up Instead!</button>
       </div>
       )
-  } else {
+  } else{
       contents = (
           <div className="Signup">
           <SignUp liftToken={this.props.liftToken} />

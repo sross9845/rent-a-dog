@@ -19,9 +19,6 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.email)
-        console.log(this.state.name)
-        console.log(this.state.password)
         console.log(this.state.image)
         axios.post('/auth/edit', {
             email: this.state.email,
@@ -30,7 +27,6 @@ class Profile extends Component {
             id: this.props.user._id,
             name: this.state.name
         }).then( response => {
-            console.log(response.data)
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
                 // TODO: maybe put this message in state? 
@@ -69,7 +65,7 @@ class Profile extends Component {
             <img src={this.state.image} style={{ width: '300px' }} />
         )}
         if (this.props.user) {
-            var picture = this.props.user
+            var picture = this.props.user.photo
         } else {
             var picture = 'Your Picture Here!'
         }
@@ -78,9 +74,9 @@ class Profile extends Component {
                 <div>
                     <p> Hit the profile route</p>
                     <form onSubmit={this.handleSubmit}>
-                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.name}/><br />
-                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.password}/> <br />
-                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.email}/> <br />
+                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br />
+                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
+                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                     <input type='submit' value='Update Profile!' />
                     </form>
                 </div>
@@ -91,8 +87,6 @@ class Profile extends Component {
                     <h1>Upload Image</h1>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                     {content}
-                    {/* <br /><br /><br /><br /><br />
-                    {picture} */}
             </div>
         );
     }

@@ -19,9 +19,6 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.email)
-        console.log(this.state.name)
-        console.log(this.state.password)
         console.log(this.state.image)
         axios.post('/auth/edit', {
             email: this.state.email,
@@ -30,13 +27,12 @@ class Profile extends Component {
             id: this.props.user._id,
             name: this.state.name
         }).then( response => {
-            console.log(response.data)
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
                 // TODO: maybe put this message in state? 
             } else {
                 localStorage.setItem('mernToken', response.data.token)
-                this.props.liftToken(response.data)
+                // this.props.liftToken(response.data)
             }
         }).catch( err => {
             //This block catches rate limiter errors
@@ -63,6 +59,7 @@ class Profile extends Component {
 
 
     render() { 
+        console.log(`This PropsFor User: ${this.props.user._id}`)
         {var content = this.state.loading ? (
             <h3>Loading...</h3>
                 ) : (
@@ -78,9 +75,9 @@ class Profile extends Component {
                 <div>
                     <p> Hit the profile route</p>
                     <form onSubmit={this.handleSubmit}>
-                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.name}/><br />
-                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.password}/> <br />
-                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.email}/> <br />
+                    Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br />
+                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
+                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                     <input type='submit' value='Update Profile!' />
                     </form>
                 </div>
