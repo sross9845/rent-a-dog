@@ -31,9 +31,16 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        let myObj = {...this.state} 
-        console.log(myObj)
-        axios.post('/auth/edit', myObj).then( response => {
+        let myArray = {...this.state}
+
+        axios.post('/auth/edit', {
+            email: this.state.email,
+            password: this.state.password,
+            photo: this.state.image,
+            id: this.props.user._id,
+            name: this.state.name,
+            favoriteBreed: this.state.favoriteBreed
+        }).then( response => {
             console.log('IN the Response after updating', response.data)
             this.setState({
                 valueForSubmit: 'Profile Updated!',
@@ -66,18 +73,18 @@ class Profile extends Component {
 
 
     render() { 
-        // {var content = this.state.loading ? (
-        //     <h3>Loading...</h3>
-        //         ) : (
-        //     <img src={this.state.image} style={{ width: '300px' }} />
-        // )}
+        {var content = this.state.loading ? (
+            <h3>Loading...</h3>
+                ) : (
+            <img src={this.state.image} style={{ width: '300px' }} />
+        )}
         if (this.props.user) {
             var picture = this.props.user
         } else {
             var picture = 'Your Picture Here!'
         }
         return (
-            <div className="App layer full">
+            <div className="App">
                 <div>
                     <h1>Hello: {this.state.name}</h1>
                     <h3>Here are your details to change:</h3>
@@ -96,7 +103,6 @@ class Profile extends Component {
                 <h1>Upload Image</h1>
                 <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                 {content}
-
             </div>
         );
     }
