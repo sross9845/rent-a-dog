@@ -29,7 +29,7 @@ class Home extends Component {
           )
   }
     return (
-      <div className='App layer full'>
+      <div className='App'>
         <h1 className="title"><u>Rent a Dog</u></h1>
         <h3>The RADdest app out there</h3>
         <br />

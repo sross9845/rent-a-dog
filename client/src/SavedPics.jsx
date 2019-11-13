@@ -50,7 +50,7 @@ class SavedPics extends Component {
             var mappedDogs = 'loading favourites'
         }
         return ( 
-            <div className='layer'>
+            <div>
             <br />
             <h1 className='titleFavs'> View Your Favourites!</h1>
             <div className='mainContainer '>

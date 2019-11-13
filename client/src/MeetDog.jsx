@@ -34,7 +34,7 @@ class MeetDog extends Component {
             var mappedDogs = 'Loading Adopt Data'
         }
         return ( 
-            <div class='layer'>
+            <div>
             <br />
             <div className='adoptTitle'>
                 <h2> Rent or Adopt your favorite pets today!! These dogs would absolutely love to try out a place in your home. Contact the info below and mention you are looking into the RAD adoption process. </h2>
