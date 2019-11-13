@@ -29,12 +29,12 @@ class MeetDog extends Component {
     render() { 
         if (this.state.dogList) {
             console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((ele, id) => <div className='ulStyle'><ul ><li key={id}>{ele.name}</li><li>{ele.status}</li><li>{ele.email}</li><li>{ele.phone}</li><li>{ele.state}</li><li>{ele.city}</li></ul></div>)
+            var mappedDogs = this.state.dogList.map((ele, id) => <div><ul className='ulStyle'><li key={id}>{ele.name}</li><li>{ele.status}</li><li>{ele.email}</li><li>{ele.phone}</li><li>{ele.state}</li><li>{ele.city}</li></ul></div>)
         } else {
             var mappedDogs = 'Loading Adopt Data'
         }
         return ( 
-            <div className='adoptContainer'>
+            <div>
                 <p> Adopt Your Favorite Pet!</p>
                     {mappedDogs}
             </div>
