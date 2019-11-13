@@ -7,6 +7,7 @@ class CreatePic extends Component {
         tokenVar: null,
         dogList: null,
         userDetails: null,
+        selectedDog: null
     }
 
     componentDidMount = () => {
@@ -45,7 +46,7 @@ class CreatePic extends Component {
         console.log(this.state.photo)
     }
 
-    handleClick = (event) => {
+    handleSubmitClick = (event) => {
         event.preventDefault();
         let mypicture = event.target.photo.value.toString()
         axios.post(`/favourite/savephoto`, {
@@ -60,18 +61,32 @@ class CreatePic extends Component {
             contactState: event.target.contactState.value,
         })
     }
+    handleDetailsClick = (ele) => {
+        this.setState({
+            selectedDog: ele
+        })
+    }
 
     render() { 
         if (this.state.userDetails) {
-            var myPhoto = <img src={this.state.userDetails.photo}></img>
+            var myPhoto =(
+                <>
+                 <img className='userImage' src={this.state.userDetails.photo}></img>
+                </>
+            )
         } else {
             var myPhoto = 'loading'
         }
+        let dogPhoto
+        if (this.state.selectedDog){
+            dogPhoto = <img className='dogImage' src={this.state.selectedDog.photos[0].large}></img>
+        } 
         if (this.state.dogList) {
             var mappedDogs = this.state.dogList.animals.map((ele, id) => {
                 if(ele.photos.length > 0) {
                     return (  
-                        <form onSubmit={this.handleClick} key={id}><p>{ele.name}</p>
+                        <div onClick={() => this.handleDetailsClick(ele)}>
+                        <form onSubmit={this.handleSubmitClick} key={id}><p>{ele.name}</p>
                         <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
                         <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
                         <input type="hidden" name="photo" value={ele.photos[0].large} onChange={this.handleChange}/>
@@ -81,18 +96,22 @@ class CreatePic extends Component {
                         <input type="hidden" name="contactCity" value={ele.contact.address.city} onChange={this.handleChange}/>
                         <input type="hidden" name="contactState" value={ele.contact.address.state} onChange={this.handleChange}/>
                         <input type="submit" value="Favorite This Dog!"/>
-                        </form>)}
+                        </form>
+                        </div>)}
                 })
 
         } else {
             var mappedDogs = 'Loading'
         }
         return ( 
-            <div>
-                <h1> Hit the create pic route</h1>
-                <h3>pick a favorite Dog!</h3>
-                {myPhoto}
-                    {mappedDogs}
+            <div className='contain' >
+            <div className="sidebar">
+            {mappedDogs}
+            </div>
+            <div className='createdContainer'>
+            {myPhoto}
+            {dogPhoto}
+            </div>
             </div>
         );
     }
