@@ -108,7 +108,7 @@ class CreatePic extends Component {
             var mappedDogs = 'Loading'
         }
         return ( 
-            <div className='layer'>
+            <div>
             <br />
             <div className='contain' >
             <div className="createSidebar">

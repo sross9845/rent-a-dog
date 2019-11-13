@@ -69,7 +69,7 @@ class Profile extends Component {
         // {var content = this.state.loading ? (
         //     <h3>Loading...</h3>
         //         ) : (
-        //     <img src={this.state.image} style={{ width: '300px' }} />
+        //     <img className='showImage' src={this.state.image} style={{ width: '300px' }} />
         // )}
         if (this.props.user) {
             var picture = this.props.user
@@ -89,13 +89,13 @@ class Profile extends Component {
                     Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.user.password}/> <br />
                     Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.user.email}/> <br />
                     Favorite Breed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} placeholder={this.props.user.favoriteBreed}/> <br />
+                    <h1>Upload Image</h1>
+                    <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
+                    {/* {content} */}
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>
 
-                <h1>Upload Image</h1>
-                <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
-                {content}
 
             </div>
         );
