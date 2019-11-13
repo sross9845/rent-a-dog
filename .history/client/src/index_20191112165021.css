@@ -198,10 +198,3 @@ code {
   align-items: center;
   width: 20%;
 }
-
-.adoptContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

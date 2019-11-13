@@ -34,7 +34,7 @@ class MeetDog extends Component {
             var mappedDogs = 'Loading Adopt Data'
         }
         return ( 
-            <div className='adoptContainer'>
+            <div>
                 <p> Adopt Your Favorite Pet!</p>
                     {mappedDogs}
             </div>

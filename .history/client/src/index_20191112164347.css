@@ -147,8 +147,8 @@ code {
 }
 
 .titleFavs {
-  color: white;
-  border: 2px solid white;
+  color: black;
+  border: 2px solid black;
   width: 102%;
   margin: 2%;
   background: #04286E;
@@ -157,8 +157,8 @@ code {
 }
 
 .imageClass {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   padding: 2%;
 }
 
@@ -169,39 +169,13 @@ code {
 
 .formStyle {
   background: #04286E;
-  border: 2px solid white;
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .deleteButton {
   background: black;
   color: white;
-  width: 100%;
+  width: 50%;
   border-radius: 30%;
   align-content: center;
   justify-content: center;
-}
-
-/****************************** ADOPT PICS STYLING **************************************/
-
-.ulStyle {
-  background: #04286E;
-  border: 2px solid white;
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-}
-
-.adoptContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

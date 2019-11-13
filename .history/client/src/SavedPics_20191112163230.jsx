@@ -52,7 +52,7 @@ class SavedPics extends Component {
         return ( 
             <div className='mainContainer'>
                 <div>
-                    <h1 className='titleFavs'> View Your Favourites!</h1>
+                    <h1 > View Your Favourites!</h1>
                 </div>
                 {mappedDogs}
             </div>

@@ -185,23 +185,3 @@ code {
   align-content: center;
   justify-content: center;
 }
-
-/****************************** ADOPT PICS STYLING **************************************/
-
-.ulStyle {
-  background: #04286E;
-  border: 2px solid white;
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-}
-
-.adoptContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

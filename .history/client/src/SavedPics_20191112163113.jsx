@@ -42,9 +42,9 @@ class SavedPics extends Component {
             console.log(this.state.dogList)
             var mappedDogs = this.state.dogList.map((ele, id) => <div className='container'><form onSubmit={this.handleSubmit} className='formStyle'><div><p key={id} className='dogName'>{ele.name}<br /></p></div><div><img src={ele.photo} className='imageClass'></img></div>
                                                                     <input type="hidden" name="id" value={ele._id}/>
-                                                                        <div>
-                                                                            <input type="submit" value="Delete" className='deleteButton'/>
-                                                                        </div>
+                                                                    <div>
+                                                                        <input type="submit" value="Delete" className='deleteButton'/>
+                                                                    </div>
                                                                     </form></div>)
         } else {
             var mappedDogs = 'loading favourites'
@@ -52,7 +52,7 @@ class SavedPics extends Component {
         return ( 
             <div className='mainContainer'>
                 <div>
-                    <h1 className='titleFavs'> View Your Favourites!</h1>
+                    <h1 > View Your Favourites!</h1>
                 </div>
                 {mappedDogs}
             </div>
