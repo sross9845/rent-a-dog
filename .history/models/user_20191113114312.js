@@ -36,7 +36,6 @@ var userSchema = new mongoose.Schema({
     photo: {
         type: String
     },
-    favoriteBreed: String,
     favoriteDogs: [favoriteDogsSchema]
 });
 

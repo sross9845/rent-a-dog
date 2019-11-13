@@ -31,15 +31,19 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        let myObj = {...this.state} 
-        console.log(myObj)
-        axios.post('/auth/edit', myObj).then( response => {
+        axios.post('/auth/edit', {
+            email: this.state.email,
+            password: this.state.password,
+            photo: this.state.image,
+            id: this.props.user._id,
+            name: this.state.name,
+            favoriteBreed: this.state.favoriteBreed
+        }).then( response => {
             console.log('IN the Response after updating', response.data)
             this.setState({
                 valueForSubmit: 'Profile Updated!',
                 email: response.data.email,
-                name: response.data.name,
-                favoriteBreed: response.data.favoriteBreed
+                name: response.data.name
             })
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)

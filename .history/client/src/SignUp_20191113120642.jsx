@@ -8,9 +8,7 @@ class SignUp extends Component {
             name: '',
             email: '',
             password: '',
-            message: '',
-            image: '',
-            favoriteBreed: '',
+            message: ''
         }
     }
     handleChange = (e) => {
@@ -20,13 +18,10 @@ class SignUp extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        let myObj = {...this.state}
         axios.post('/auth/signup', {
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password,
-            photo: this.state.image,
-            favoriteBreed: this.state.favoriteBreed
+            password: this.state.password
         }).then( response => {
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
@@ -56,7 +51,6 @@ class SignUp extends Component {
     }
 
     render() { 
-
         {var content = this.state.loading ? (
             <h3>Loading...</h3>
                 ) : (
@@ -70,7 +64,6 @@ class SignUp extends Component {
                 Name: <input type='text' name='name' onChange={this.handleChange} value={this.state.name} /> <br />
                 Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                 Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
-                FavoriteBreed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} /> <br />
                 <input type='submit' value='Sign Up!' />
                 </form>
 
