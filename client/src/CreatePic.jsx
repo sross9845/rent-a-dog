@@ -69,11 +69,15 @@ class CreatePic extends Component {
 
     render() { 
         if (this.state.userDetails) {
+            if (this.state.userDetails.photo) {
             var myPhoto =(
                 <>
                  <img className='userImage' src={this.state.userDetails.photo}></img>
                 </>
             )
+            } else{
+                var myPhoto = <h1>Please Upload A Photo</h1>
+            }
         } else {
             var myPhoto = 'loading'
         }
@@ -85,7 +89,7 @@ class CreatePic extends Component {
             var mappedDogs = this.state.dogList.animals.map((ele, id) => {
                 if(ele.photos.length > 0) {
                     return (  
-                        <div onClick={() => this.handleDetailsClick(ele)}>
+                        <div className='sideBarDiv' onClick={() => this.handleDetailsClick(ele)}>
                         <form onSubmit={this.handleSubmitClick} key={id}><p>{ele.name}</p>
                         <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
                         <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
@@ -104,13 +108,17 @@ class CreatePic extends Component {
             var mappedDogs = 'Loading'
         }
         return ( 
+            <div className='layer'>
+            <h1><u>Click a dog below to Create A Picture With the Dogs</u></h1>
+            <br />
             <div className='contain' >
-            <div className="sidebar">
+            <div className="createSidebar">
             {mappedDogs}
             </div>
             <div className='createdContainer'>
             {myPhoto}
             {dogPhoto}
+            </div>
             </div>
             </div>
         );

@@ -156,10 +156,17 @@ class App extends Component {
   }
 
   render() { 
+    if(this.state.user){
+      var profile = (
+        <>
+       <NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink> {' | '} <NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '} <NavLink className='navlink' to='/' onClick={this.logOut}>LOG OUT</NavLink>
+        </>
+      )
+    }
     return ( 
       <div>
         <Router>
-        <nav><img className='logo' src='https://i.imgur.com/cvN4hi9.png' ></img><NavLink className='navlink' to='/'>HOME</NavLink>{' | '}<NavLink className='navlink' to='/dogs'>DOGS</NavLink>{' | '}<NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink></nav>
+        <nav><img className='logo' src='https://i.imgur.com/cvN4hi9.png' ></img><NavLink className='navlink' to='/'>HOME</NavLink>{' | '}<NavLink className='navlink' to='/dogs'>DOGS</NavLink>{' | '} {profile}</nav>
           <Route exact path='/' render={() => <Home user={this.state.user} logOut={this.logOut} liftToken={this.liftToken} handleLoginClick={this.handleLoginClick} login={this.state.login}/> } />
           <Route exact path='/dogs' component={AllDogs} />
           <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
