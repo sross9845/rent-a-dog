@@ -29,14 +29,19 @@ class MeetDog extends Component {
     render() { 
         if (this.state.dogList) {
             console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((ele, id) => <div className='ulStyle'><ul ><li key={id}>{ele.name}</li><li>{ele.status}</li><li>{ele.email}</li><li>{ele.phone}</li><li>{ele.state}</li><li>{ele.city}</li></ul></div>)
+            var mappedDogs = this.state.dogList.map((ele, id) => <div className='ulStyle'><h3>{ele.name}</h3><ul ><li> Status: {ele.status}</li><li>Email: {ele.email}</li><li>Phone:{ele.phone}</li><li>City: {ele.city}</li><li>State: {ele.state}</li></ul></div>)
         } else {
             var mappedDogs = 'Loading Adopt Data'
         }
         return ( 
+            <div class='layer'>
+            <br />
+            <div className='adoptTitle'>
+                <h2> Rent or Adopt your favorite pets today!! These dogs would absolutely love to try out a place in your home. Contact the info below and mention you are looking into the RAD adoption process. </h2>
+            </div>
             <div className='adoptContainer'>
-                <p> Adopt Your Favorite Pet!</p>
                     {mappedDogs}
+            </div>
             </div>
         );
     }

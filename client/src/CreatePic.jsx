@@ -109,13 +109,14 @@ class CreatePic extends Component {
         }
         return ( 
             <div className='layer'>
-            <h1><u>Click a dog below to Create A Picture With the Dogs</u></h1>
             <br />
             <div className='contain' >
             <div className="createSidebar">
             {mappedDogs}
             </div>
             <div className='createdContainer'>
+            <h1 className='titleCreate'><u>Click a dog to Create A Picture</u></h1>
+            <br />
             {myPhoto}
             {dogPhoto}
             </div>
