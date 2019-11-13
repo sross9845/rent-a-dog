@@ -16,7 +16,7 @@ router.post('/edit', (req, res) => {
         favoriteBreed: req.body.favoriteBreed
     }, (err, user) => {
         if (user) {
-            console.log(`===================== This is the User: ${user}`)
+            console.log(user)
             res.json(user)
         }
     })

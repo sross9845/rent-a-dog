@@ -33,7 +33,14 @@ class Profile extends Component {
         e.preventDefault()
         let myObj = {...this.state} 
         console.log(myObj)
-        axios.post('/auth/edit', myObj).then( response => {
+        axios.post('/auth/edit', {
+            email: this.state.email,
+            password: this.state.password,
+            photo: this.state.image,
+            id: this.props.user._id,
+            name: this.state.name,
+            favoriteBreed: this.state.favoriteBreed
+        }).then( response => {
             console.log('IN the Response after updating', response.data)
             this.setState({
                 valueForSubmit: 'Profile Updated!',
