@@ -10,7 +10,7 @@ body {
   background-attachment: fixed;
   color: #EDFEEB;
   font-family: 'Arimo', sans-serif;
-  padding-top: 75px;
+  /* padding-top: 75px; */
 }
 
 html{
@@ -80,8 +80,8 @@ nav{
   background: linear-gradient(to top, #04286E, #080945);
   color: white;
   font-size: 2em;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  /* top: 0; */
   width:100%;
 }
 
@@ -132,6 +132,25 @@ height: 75px;
 width: 85px;
 border-radius: 25%;
 margin-left: .25em;
+}
+
+.userImage{
+  width: 700px;
+  height: 500px;
+}
+
+.dogImage{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 175px;
+  height: 175px;
+}
+
+.createdContainer{
+  border: 2px solid black;
+  height: 503px;
+  position: relative;
 }
 
 code {
