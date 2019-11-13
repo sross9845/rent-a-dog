@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,7 +12,6 @@ body {
   background-attachment: fixed;
   color: #EDFEEB;
   font-family: 'Arimo', sans-serif;
-  /* padding-top: 75px; */
 }
 
 html{
@@ -41,7 +42,8 @@ hr{
 
 .sideBarDiv {
   border: 3px outset white;
-  background: rgba(0, 0, 0, 0.472);
+  background: rgba(0, 0, 0, 0.75);
+  position: relative
 }
 
 .sidebar{
@@ -50,6 +52,15 @@ hr{
   overflow-y: scroll;
   font-size: 2em;
   border: 3px solid #EDFEEB;
+}
+
+.sidebarLogo{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -25px;;
 }
 
 .selected{
@@ -70,8 +81,9 @@ hr{
 
 .homeInfo{
   font-size: 1.5em;
-  color: #EDFEEB;
+  color: rgba(237, 254, 235, 0.822);
   text-align: justify;
+  padding: 2em;
 }
 
 nav{
@@ -79,9 +91,7 @@ nav{
   padding: 0;
   background: linear-gradient(to top, #04286E, #080945);
   color: white;
-  font-size: 2em;
-  /* position: fixed; */
-  /* top: 0; */
+  font-size: 1.5em;
   width:100%;
 }
 
@@ -90,7 +100,7 @@ form input{
 }
 
 .navlink{
-  color: white;
+  color: #EDFEEB;
   margin: 1em;
   text-decoration: none;
   line-height: 50px;
@@ -102,29 +112,27 @@ form input{
 }
 
 .homeContents{
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  border: 4px solid white;
+  border-radius: 20%;
+  background: rgba(0, 0, 0, 0.75)
 }
+
 
 .Login{
   margin: 1em auto;
-  border: 4px outset white;
-  padding: 4em;
-  background: rgba(0, 0, 0, 0.472)
 }
 .Signup{
   margin: 1em auto;
-  border: 4px outset white;
-  padding: 4em;
-  background: rgba(0, 0, 0, 0.472)
 }
 
 .title{
   margin: 0px;
   padding: 25px;
+  font-weight: bold;
 }
 
 .logo {
@@ -148,15 +156,19 @@ margin-left: .25em;
 }
 
 .createdContainer{
-  border: 2px solid black;
-  height: 503px;
   position: relative;
+  height: 500px;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.createSidebar{
+  width: 25%;
+  height:100vh;
+  overflow-y: scroll;
+  font-size: 1.5em;
+  border: 3px solid #EDFEEB;
 }
+
 
 /****************************** SAVED PICS STYLING **************************************/
 .mainContainer {
