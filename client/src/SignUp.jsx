@@ -57,12 +57,6 @@ class SignUp extends Component {
 
     render() { 
 
-        // {var content = this.state.loading ? (
-        //     <h3>Loading...</h3>
-        //         ) : (
-        //     <img className='showImage' src={this.state.image} style={{ width: '300px' }} />
-        // )}
-
         return ( 
             <div>
                 <h3>Create a new account</h3>
