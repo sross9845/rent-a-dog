@@ -19,12 +19,11 @@ class Profile extends Component {
             axios.get(`/meet/${this.props.user._id}`)
             .then(response => {
                 this.setState({
-                    email: response.data.email,
+                    email: this.props.user.email,
                     password: this.props.user.password,
-                    name: response.data.name,
+                    name: this.props.user.name,
                     id: this.props.user._id,
-                    favoriteBreed: response.data.favoriteBreed,
-                    image: response.data.photo
+                    favoriteBreed: this.props.user.favoriteBreed
                 })
             })
         }

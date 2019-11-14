@@ -16,16 +16,12 @@ class Profile extends Component {
 
     componentDidMount = () => {
         if (this.props.user) {
-            axios.get(`/meet/${this.props.user._id}`)
-            .then(response => {
-                this.setState({
-                    email: response.data.email,
-                    password: this.props.user.password,
-                    name: response.data.name,
-                    id: this.props.user._id,
-                    favoriteBreed: response.data.favoriteBreed,
-                    image: response.data.photo
-                })
+            this.setState({
+                email: this.props.user.email,
+                password: this.props.user.password,
+                name: this.props.user.name,
+                id: this.props.user._id,
+                favoriteBreed: this.props.user.favoriteBreed
             })
         }
     }

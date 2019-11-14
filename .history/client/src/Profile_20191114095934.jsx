@@ -20,11 +20,10 @@ class Profile extends Component {
             .then(response => {
                 this.setState({
                     email: response.data.email,
-                    password: this.props.user.password,
+                    password: response.data.password,
                     name: response.data.name,
-                    id: this.props.user._id,
-                    favoriteBreed: response.data.favoriteBreed,
-                    image: response.data.photo
+                    id: response.data._id,
+                    favoriteBreed: response.data.favoriteBreed
                 })
             })
         }
