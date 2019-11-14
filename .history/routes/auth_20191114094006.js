@@ -5,7 +5,7 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
 router.post('/edit', (req, res) => {
-    console.log('req.body.id', req.body.id)
+    console.log(req.body._id)
     var password = req.body.password
     password = bcrypt.hashSync(password, 12)
     User.findByIdAndUpdate(req.body.id, {
