@@ -24,7 +24,7 @@ class CompareProfile extends React.Component {
             var mappedDogs = 'loading dog comparison'
         }
         return (
-            <div className='App compareContainer'>
+            <div className='App'>
                 <h1 className='title'>Here's the all time best dogs!</h1>
                 {mappedDogs}
             </div>

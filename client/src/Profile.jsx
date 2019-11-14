@@ -79,22 +79,24 @@ class Profile extends Component {
             var picture = 'Your Picture Here!'
         }
         return (
-            <div className="App full">
-                <div>
-                    <h1>Hello: {this.state.name}</h1>
+            <div className="App">
+                <h1 className='title'>Hello {this.state.name}, welcome to your page</h1>
+                <div className='profileForm'>
                     <h3>Here are your details to change:</h3>
                     <p>Name: {this.state.name}</p>
                     <p>Email: {this.state.email}</p>
                     <p>Favorite Breed: {this.state.favoriteBreed}</p>
                     <form onSubmit={this.handleSubmit}>
+                    <hr />
                     Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder={this.props.user.name}/><br />
                     Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.user.password}/> <br />
                     Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.user.email}/> <br />
                     Favorite Breed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} placeholder={this.props.user.favoriteBreed}/> <br />
-                    <h1>Upload Image</h1>
+                    <hr />
+                    <h3>Upload Image</h3>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
+                    <hr />
                     {/* {content} */}
-                    <br />
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>

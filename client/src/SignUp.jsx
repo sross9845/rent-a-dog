@@ -69,7 +69,7 @@ class SignUp extends Component {
                 Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                 Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
                 FavoriteBreed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} /> <br />
-                <h1>Upload Image</h1>
+                <h3>Upload Image</h3>
                 <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                 <br /><input type='submit' value='Sign Up!' />
                 </form>
