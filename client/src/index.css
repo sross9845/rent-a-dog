@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('https://i.imgur.com/5fQVHX8.jpg');
+  background: url('https://i.imgur.com/6ULGVWp.jpg');
   background-size: cover;
   background-attachment: fixed;
   color: #EDFEEB;
@@ -89,7 +89,7 @@ nav{
   padding: 0;
   background: linear-gradient(to top, #04286E, #080945);
   color: #EDFEEB;
-  font-size: 1.5em;
+  font-size: 1.25em;
   width:100%;
 }
 
@@ -113,7 +113,7 @@ form input{
   flex-direction: column;
   border: 4px solid white;
   border-radius: 20%;
-  background: rgba(0, 0, 0, 0.85)
+  background: rgba(0, 0, 0, 0.85);
 }
 
 
@@ -129,6 +129,7 @@ form input{
   padding: 25px;
   font-weight: bold;
   font-size: 4em;
+  text-align: center;
 }
 
 .logo {
@@ -173,6 +174,13 @@ margin-left: .25em;
   border-radius: 10%;
   padding: 1%;
   text-align:center;
+}
+
+.profileForm{
+  border: 3px outset white;
+  width: 50%;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.85)
 }
 
 
