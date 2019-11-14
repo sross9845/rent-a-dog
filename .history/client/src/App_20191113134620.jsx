@@ -14,6 +14,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import CompareProfile from './CompareProfile';
 
 class App extends Component {
   state = { 
