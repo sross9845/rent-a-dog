@@ -37,12 +37,12 @@ router.get('/', (req, res) => {
         Object.keys(myDogObj).map(function(key) {
             result.push([key.match(/\D/g), myDogObj[key]])
         });
-
         function sortNumber(a, b) {
             return a - b;
         }
         
-        result.sort(sortNumber);
+        var numArray = [140000, 104, 99];
+        numArray.sort(sortNumber);
 
         /// send the data to ront end for display
         console.log(result)

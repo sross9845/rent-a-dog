@@ -29,8 +29,8 @@ class SelectedDog extends Component {
                 {details}
             </div>
             
-        );
+         );
     }
 }
-
+ 
 export default SelectedDog;
