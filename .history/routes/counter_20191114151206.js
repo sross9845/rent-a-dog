@@ -38,12 +38,6 @@ router.get('/', (req, res) => {
             result.push([key.match(/\D/g), myDogObj[key]])
         });
 
-        function sortNumber(a, b) {
-            return a - b;
-        }
-        
-        result.sort(sortNumber);
-
         /// send the data to ront end for display
         console.log(result)
         res.json(result)

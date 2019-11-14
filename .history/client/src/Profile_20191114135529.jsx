@@ -83,6 +83,7 @@ class Profile extends Component {
 
     render() { 
         if (this.props.user) {
+            console.log(this.props.user)
             var picture = this.props.user
         } else {
             var picture = 'Your Picture Here!'
@@ -105,6 +106,7 @@ class Profile extends Component {
                     <h3>Upload Image</h3>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                     <hr />
+                    {/* {content} */}
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>
