@@ -46,7 +46,7 @@ class Profile extends Component {
             loading: false,
             name: this.state.name,
             valueForSubmit: 'Update Info',
-            id: this.state.id
+            id: ''
         } 
         if (this.state.password) {
             myObj.password = this.state.password

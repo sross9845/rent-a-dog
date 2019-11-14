@@ -21,7 +21,6 @@ router.post('/edit', (req, res) => {
         photo: req.body.image,
         favoriteBreed: req.body.favoriteBreed
     }
-    console.log(myObj)
     if (req.body.password) {
         password = req.body.password
         password = bcrypt.hashSync(password, 12)

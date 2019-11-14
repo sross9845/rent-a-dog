@@ -44,9 +44,9 @@ class Profile extends Component {
             favoriteBreed: this.state.favoriteBreed,
             image: this.state.image,
             loading: false,
-            name: this.state.name,
+            name: '',
             valueForSubmit: 'Update Info',
-            id: this.state.id
+            id: ''
         } 
         if (this.state.password) {
             myObj.password = this.state.password

@@ -41,12 +41,12 @@ class Profile extends Component {
         e.preventDefault()
         var myObj = {
             email: this.state.email,
-            favoriteBreed: this.state.favoriteBreed,
-            image: this.state.image,
+            favoriteBreed: '',
+            image: '',
             loading: false,
-            name: this.state.name,
+            name: '',
             valueForSubmit: 'Update Info',
-            id: this.state.id
+            id: ''
         } 
         if (this.state.password) {
             myObj.password = this.state.password
