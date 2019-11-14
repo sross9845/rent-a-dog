@@ -6,7 +6,7 @@ import Home from './Home';
 import MeetDog from './MeetDog';
 import Profile from './Profile';
 import SavedPics from './SavedPics';
-import CompareProfile from './CompareProfile';
+import SavedPics from './CompareProfile';
 import axios from 'axios';
 
 import {
@@ -14,6 +14,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import CompareProfile from './CompareProfile';
 
 class App extends Component {
   state = { 

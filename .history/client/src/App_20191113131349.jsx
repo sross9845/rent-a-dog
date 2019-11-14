@@ -6,7 +6,7 @@ import Home from './Home';
 import MeetDog from './MeetDog';
 import Profile from './Profile';
 import SavedPics from './SavedPics';
-import CompareProfile from './CompareProfile';
+import SavedPics from './CompareProfile';
 import axios from 'axios';
 
 import {
@@ -14,6 +14,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import CompareProfile from './CompareProfile';
 
 class App extends Component {
   state = { 
@@ -160,7 +161,7 @@ class App extends Component {
     if(this.state.user){
       var profile = (
         <>
-          <NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink> {' | '} <NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '} <NavLink className='navlink' to='/' onClick={this.logOut}>LOG OUT</NavLink><NavLink className='navlink' to='/compare' >COMPARE</NavLink>
+       <NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink> {' | '} <NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '} <NavLink className='navlink' to='/' onClick={this.logOut}>LOG OUT</NavLink>
         </>
       )
     }
@@ -173,7 +174,7 @@ class App extends Component {
           <Route exact path='/create' render={() => <CreatePic user={this.state.user}/> } />
           <Route exact path='/meet' render={() => <MeetDog user={this.state.user}/> } />
           <Route exact path='/saved' render={() => <SavedPics user={this.state.user}/> } />
-          <Route exact path='/compare' render={() => <CompareProfile user={this.state.user}/> } />
+          <Route exact path='/saved' render={() => <CompareProfile user={this.state.user}/> } />
           <Route exact path='/profile' render={() => <Profile user={this.state.user} liftToken={this.liftToken}/> } />
         </Router>
         </div>
