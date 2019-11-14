@@ -76,7 +76,7 @@ class CreatePic extends Component {
                 </>
             )
             } else{
-                var myPhoto = <img className='userImage' src='https://i.imgur.com/yywNASd.jpg'></img>
+                var myPhoto = <img className='userImage' src='https://i.imgur.com/KyLnPeD.jpg'></img>
             }
         } else {
             var myPhoto = 'loading'

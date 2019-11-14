@@ -25,7 +25,7 @@ class CompareProfile extends React.Component {
         }
         return (
             <div className='App compareContainer'>
-                <h1>Here's the names of the all time best dogs!</h1>
+                <h1 className='title'>Here's the all time best dogs!</h1>
                 {mappedDogs}
             </div>
         )
