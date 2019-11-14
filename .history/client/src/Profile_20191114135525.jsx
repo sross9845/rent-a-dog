@@ -50,6 +50,7 @@ class Profile extends Component {
         if (this.state.password) {
             myObj.password = this.state.password
         }
+        
         axios.post('/auth/edit', myObj).then( response => {
             this.setState({
                 valueForSubmit: 'Profile Updated!',
@@ -83,6 +84,7 @@ class Profile extends Component {
 
     render() { 
         if (this.props.user) {
+            console.log(this.props.user)
             var picture = this.props.user
         } else {
             var picture = 'Your Picture Here!'
@@ -105,6 +107,7 @@ class Profile extends Component {
                     <h3>Upload Image</h3>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                     <hr />
+                    {/* {content} */}
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>

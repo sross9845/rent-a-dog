@@ -35,14 +35,8 @@ router.get('/', (req, res) => {
 
         // map these values to an array of arrays... and remove everything that isn't a name
         Object.keys(myDogObj).map(function(key) {
-            result.push([key.match(/\D/g), myDogObj[key]])
+            result.push([key.match(/\D?/g), myDogObj[key]])
         });
-
-        function sortNumber(a, b) {
-            return a - b;
-        }
-        
-        result.sort(sortNumber);
 
         /// send the data to ront end for display
         console.log(result)
