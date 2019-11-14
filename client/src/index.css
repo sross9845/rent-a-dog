@@ -2,11 +2,6 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: url('https://i.imgur.com/6ULGVWp.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -35,11 +30,12 @@ hr{
 .contain{
   display: flex;
   height:100vh;
+  margin-top: 5px;
 }
 
 
 .sideBarDiv {
-  border: 3px outset white;
+  border: 2px outset white;
   background: rgba(0, 0, 0, 0.85);
   position: relative
 }
@@ -148,13 +144,13 @@ margin-left: .25em;
   position: absolute;
   right: 0px;
   bottom: 0px;
-  width: 175px;
-  height: 175px;
+  width: 200px;
+  height: 200px;
 }
 
 .createdContainer{
   position: relative;
-  height: 575px;
+  height: 572px;
   margin: 0 auto;
 }
 
@@ -167,12 +163,9 @@ margin-left: .25em;
 }
 
 .titleCreate {
-  border: 2px solid white;
   width: 100%;
   margin: 0 auto;
-  background: #04286E;
-  border-radius: 10%;
-  padding: 1%;
+  font-size: 2.5em;
   text-align:center;
 }
 
@@ -273,9 +266,7 @@ ul{
   background: rgba(0, 0, 0, 0.85)
 }
 
-.compareContainer{
-  
-}
+
 .adoptTitle{
   text-align: justify;
   width: 50%;
