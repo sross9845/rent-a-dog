@@ -15,17 +15,16 @@ router.post('/edit', (req, res) => {
     //         password = bcrypt.hashSync(password, 12)
     //     }     
     // })
-    var myObj = {
-        name: req.body.name,
-        email: req.body.email,
-        photo: req.body.image,
-        favoriteBreed: req.body.favoriteBreed
-    }
-    console.log(myObj)
     if (req.body.password) {
         password = req.body.password
         password = bcrypt.hashSync(password, 12)
-        myObj.password = password
+    }
+    var myObj = {
+        name: req.body.name,
+        email: req.body.email,
+        password: password,
+        photo: req.body.image,
+        favoriteBreed: req.body.favoriteBreed
     }
     User.findByIdAndUpdate(req.body.id, myObj, (err, user) => {
         if (user) {

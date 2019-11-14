@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
         var myList = []
         var result = []
         var myArray = []
-
         // get all dogs from all users
         users.map(user => {
             for (dog in user.favoriteDogs) {
@@ -16,14 +15,13 @@ router.get('/', (req, res) => {
                 myList.push(user.favoriteDogs[dog].name)
             }
         })
-
         // get all dogs apiID to incluse name of dogs
             for (let i=0; i<myList.length; i+=2) {
                 let myString = myList[i]+myList[i+1]
                 myArray.push(myString)
             }
 
-        // associate each apiID+DogName with a number of times refrenced
+
         var myDogObj = new Object();
         const results = myArray.filter(function(item, index) {
             if (myArray.indexOf(item) === index) {
@@ -32,13 +30,9 @@ router.get('/', (req, res) => {
                 return myDogObj[''+item] = myDogObj[''+item] += 1
             }
         })
-
-        // map these values to an array of arrays... and remove everything that isn't a name
         Object.keys(myDogObj).map(function(key) {
             result.push([key.match(/\D/g), myDogObj[key]])
         });
-
-        /// send the data to ront end for display
         res.json(result)
     })
 })

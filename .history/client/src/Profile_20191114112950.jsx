@@ -21,7 +21,7 @@ class Profile extends Component {
                 console.log(response.data)
                 this.setState({
                     email: response.data.email,
-                    password: this.props.user.password,
+                    password: 'password',
                     name: response.data.name,
                     id: this.props.user._id,
                     favoriteBreed: response.data.favoriteBreed,
@@ -39,18 +39,7 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        var myObj = {
-            email: this.state.email,
-            favoriteBreed: this.state.favoriteBreed,
-            image: this.state.image,
-            loading: false,
-            name: this.state.name,
-            valueForSubmit: 'Update Info',
-            id: this.state.id
-        } 
-        if (this.state.password) {
-            myObj.password = this.state.password
-        }
+        let myObj = {...this.state} 
         console.log(myObj)
         axios.post('/auth/edit', myObj).then( response => {
             console.log('IN the Response after updating', response.data)

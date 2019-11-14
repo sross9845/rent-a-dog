@@ -6,28 +6,22 @@ const bcrypt = require('bcrypt')
 
 router.post('/edit', (req, res) => {
     var password;
-    // User.findById(req.body.id, (err, user) => {
-    //     console.log(user.authenticated(user.password))
-    //     if (user.authenticated(user.password)) {
-    //         password = user.password
-    //     } else {
-    //         password = user.password
-    //         password = bcrypt.hashSync(password, 12)
-    //     }     
-    // })
-    var myObj = {
+    User.findById(req.body.id, (err, user) => {
+        console.log(user.authenticated(user.password))
+        if (user.authenticated(user.password)) {
+            password = user.password
+        } else {
+            password = user.password
+            password = bcrypt.hashSync(password, 12)
+        }     
+    })
+    User.findByIdAndUpdate(req.body.id, {
         name: req.body.name,
         email: req.body.email,
+        password: password,
         photo: req.body.image,
         favoriteBreed: req.body.favoriteBreed
-    }
-    console.log(myObj)
-    if (req.body.password) {
-        password = req.body.password
-        password = bcrypt.hashSync(password, 12)
-        myObj.password = password
-    }
-    User.findByIdAndUpdate(req.body.id, myObj, (err, user) => {
+    }, (err, user) => {
         if (user) {
             console.log(`===================== This is the User: ${user}`)
             res.json(user)
@@ -84,6 +78,7 @@ router.post('/login', (req,res) => {
         } else {
             //if user exists check auth
             if (user.authenticated(req.body.password)) {
+                console.log(req.body.password)
                 //if authenticated sign a token
                 const token = jwt.sign(user.toObject(), process.env.JWT_SECRET, {
                     expiresIn: '1d'

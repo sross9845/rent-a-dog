@@ -18,7 +18,6 @@ class Profile extends Component {
         if (this.props.user) {
             axios.get(`/meet/${this.props.user._id}`)
             .then(response => {
-                console.log(response.data)
                 this.setState({
                     email: response.data.email,
                     password: this.props.user.password,
@@ -39,18 +38,7 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        var myObj = {
-            email: this.state.email,
-            favoriteBreed: this.state.favoriteBreed,
-            image: this.state.image,
-            loading: false,
-            name: this.state.name,
-            valueForSubmit: 'Update Info',
-            id: this.state.id
-        } 
-        if (this.state.password) {
-            myObj.password = this.state.password
-        }
+        let myObj = {...this.state} 
         console.log(myObj)
         axios.post('/auth/edit', myObj).then( response => {
             console.log('IN the Response after updating', response.data)
@@ -86,7 +74,7 @@ class Profile extends Component {
 
     render() { 
         if (this.props.user) {
-            console.log(this.props.user)
+            console.log(this.props.user.password)
             var picture = this.props.user
         } else {
             var picture = 'Your Picture Here!'

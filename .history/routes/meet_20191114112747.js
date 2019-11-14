@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt')
 
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
+        // console.log(user.password)
+        console.log(user.authenticated(user.password))
         res.json(user)
     })
 })
