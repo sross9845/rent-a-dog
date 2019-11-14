@@ -37,7 +37,7 @@ class MeetDog extends Component {
             <div>
             <br />
             <div className='adoptTitle'>
-                <h2> Rent or Adopt your favorite pets today!! These dogs would absolutely love to try out a place in your home. Contact the info below and mention you are looking into the RAD adoption process. </h2>
+                <h2> Rent or Adopt your saved pets today!! These dogs would absolutely love to try out a place in your home. Contact the info below and mention you are looking into the RAD adoption process. </h2>
             </div>
             <div className='adoptContainer'>
                     {mappedDogs}

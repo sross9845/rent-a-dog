@@ -12,7 +12,7 @@ class SelectedDog extends Component {
                         <img className="largePic" src={this.props.dog.animal.photos[0].large}></img>
                         <p>Breed: {this.props.dog.animal.breeds.primary}</p>
                         <p>Gender: {this.props.dog.animal.gender}</p>
-                        <p>Size: {this.props.dog.animal.size}</p>
+                        <p>Size:{this.props.dog.animal.size}</p>
                     </div>
             )
         } 

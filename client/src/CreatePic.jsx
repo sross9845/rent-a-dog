@@ -90,7 +90,8 @@ class CreatePic extends Component {
                 if(ele.photos.length > 0) {
                     return (  
                         <div className='sideBarDiv' onClick={() => this.handleDetailsClick(ele)}>
-                        <form onSubmit={this.handleSubmitClick} key={id}><p>{ele.name}</p>
+                        <form onSubmit={this.handleSubmitClick} key={id}><p>{ele.name.toUpperCase()}</p>
+                        <img className='sidebarLogo' src={ele.photos[0].small} />
                         <input type="hidden" name="name" value={ele.name} onChange={this.handleChange}/>
                         <input type="hidden" name="id" value={ele.id} onChange={this.handleChange}/>
                         <input type="hidden" name="photo" value={ele.photos[0].large} onChange={this.handleChange}/>
@@ -99,7 +100,7 @@ class CreatePic extends Component {
                         <input type="hidden" name="status" value={ele.status} onChange={this.handleChange}/>
                         <input type="hidden" name="contactCity" value={ele.contact.address.city} onChange={this.handleChange}/>
                         <input type="hidden" name="contactState" value={ele.contact.address.state} onChange={this.handleChange}/>
-                        <input type="submit" value="Favorite This Dog!"/>
+                        <button type="submit">Favorite This Dog!</button>
                         </form>
                         </div>)}
                 })
@@ -115,7 +116,7 @@ class CreatePic extends Component {
             {mappedDogs}
             </div>
             <div className='createdContainer'>
-            <h1 className='titleCreate'><u>Click a dog to Create A Picture</u></h1>
+            <h3 className='titleCreate'>Click a dog to see how they look with you!</h3>
             <br />
             {myPhoto}
             {dogPhoto}

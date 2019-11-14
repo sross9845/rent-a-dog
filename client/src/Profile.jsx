@@ -77,7 +77,7 @@ class Profile extends Component {
             var picture = 'Your Picture Here!'
         }
         return (
-            <div className="App layer full">
+            <div className="App full">
                 <div>
                     <h1>Hello: {this.state.name}</h1>
                     <h3>Here are your details to change:</h3>
@@ -92,6 +92,7 @@ class Profile extends Component {
                     <h1>Upload Image</h1>
                     <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
                     {/* {content} */}
+                    <br />
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>
