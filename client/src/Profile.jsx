@@ -66,18 +66,18 @@ class Profile extends Component {
 
 
     render() { 
-        {var content = this.state.loading ? (
-            <h3>Loading...</h3>
-                ) : (
-            <img src={this.state.image} style={{ width: '300px' }} />
-        )}
+        // {var content = this.state.loading ? (
+        //     <h3>Loading...</h3>
+        //         ) : (
+        //     <img className='showImage' src={this.state.image} style={{ width: '300px' }} />
+        // )}
         if (this.props.user) {
             var picture = this.props.user
         } else {
             var picture = 'Your Picture Here!'
         }
         return (
-            <div className="App">
+            <div className="App layer full">
                 <div>
                     <h1>Hello: {this.state.name}</h1>
                     <h3>Here are your details to change:</h3>
@@ -89,13 +89,14 @@ class Profile extends Component {
                     Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} placeholder={this.props.user.password}/> <br />
                     Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} placeholder={this.props.user.email}/> <br />
                     Favorite Breed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} placeholder={this.props.user.favoriteBreed}/> <br />
+                    <h1>Upload Image</h1>
+                    <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
+                    {/* {content} */}
                     <input type='submit' value={this.state.valueForSubmit} />
                     </form>
                 </div>
 
-                <h1>Upload Image</h1>
-                <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
-                {content}
+
             </div>
         );
     }

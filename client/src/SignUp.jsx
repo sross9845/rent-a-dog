@@ -57,11 +57,11 @@ class SignUp extends Component {
 
     render() { 
 
-        {var content = this.state.loading ? (
-            <h3>Loading...</h3>
-                ) : (
-            <img src={this.state.image} style={{ width: '300px' }} />
-        )}
+        // {var content = this.state.loading ? (
+        //     <h3>Loading...</h3>
+        //         ) : (
+        //     <img className='showImage' src={this.state.image} style={{ width: '300px' }} />
+        // )}
 
         return ( 
             <div>
@@ -71,12 +71,10 @@ class SignUp extends Component {
                 Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                 Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
                 FavoriteBreed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} /> <br />
-                <input type='submit' value='Sign Up!' />
-                </form>
-
                 <h1>Upload Image</h1>
                 <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
-                {content}
+                <br /><input type='submit' value='Sign Up!' />
+                </form>
             </div>
         );
     }
