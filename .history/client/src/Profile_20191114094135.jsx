@@ -20,7 +20,7 @@ class Profile extends Component {
                 email: this.props.user.email,
                 password: this.props.user.password,
                 name: this.props.user.name,
-                id: this.props.user._id
+                id: this.props._id
             })
         }
     }

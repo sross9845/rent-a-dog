@@ -10,8 +10,7 @@ class Profile extends Component {
         image: '',
         loading: false,
         name: '',
-        valueForSubmit: 'Update Info',
-        id: ''
+        valueForSubmit: 'Update Info'
     }
 
     componentDidMount = () => {
@@ -19,8 +18,7 @@ class Profile extends Component {
             this.setState({
                 email: this.props.user.email,
                 password: this.props.user.password,
-                name: this.props.user.name,
-                id: this.props.user._id
+                name: this.props.user.name
             })
         }
     }
@@ -68,6 +66,11 @@ class Profile extends Component {
 
 
     render() { 
+        // {var content = this.state.loading ? (
+        //     <h3>Loading...</h3>
+        //         ) : (
+        //     <img className='showImage' src={this.state.image} style={{ width: '300px' }} />
+        // )}
         if (this.props.user) {
             var picture = this.props.user
         } else {

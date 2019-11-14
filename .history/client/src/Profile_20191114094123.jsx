@@ -19,8 +19,7 @@ class Profile extends Component {
             this.setState({
                 email: this.props.user.email,
                 password: this.props.user.password,
-                name: this.props.user.name,
-                id: this.props.user._id
+                name: this.props.user.name
             })
         }
     }

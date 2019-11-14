@@ -10,8 +10,7 @@ class Profile extends Component {
         image: '',
         loading: false,
         name: '',
-        valueForSubmit: 'Update Info',
-        id: ''
+        valueForSubmit: 'Update Info'
     }
 
     componentDidMount = () => {
@@ -19,8 +18,7 @@ class Profile extends Component {
             this.setState({
                 email: this.props.user.email,
                 password: this.props.user.password,
-                name: this.props.user.name,
-                id: this.props.user._id
+                name: this.props.user.name
             })
         }
     }
@@ -33,9 +31,9 @@ class Profile extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        let myObj = {...this.state} 
-        console.log(myObj)
-        axios.post('/auth/edit', myObj).then( response => {
+        let myArray = [...this.state] 
+        console.log(myArray)
+        axios.post('/auth/edit', myArray).then( response => {
             console.log('IN the Response after updating', response.data)
             this.setState({
                 valueForSubmit: 'Profile Updated!',
