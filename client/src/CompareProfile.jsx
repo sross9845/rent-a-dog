@@ -19,13 +19,13 @@ class CompareProfile extends React.Component {
     render () {
         if (this.state.dogList) {
             console.log(this.state.dogList)
-            var mappedDogs = this.state.dogList.map((dog, id) => <p key={id} className='compareFont'>{dog[0]}{' : '}{dog[1]}</p>)
+            var mappedDogs = this.state.dogList.map((dog, id) => <h2 key={id} className='compareNames'>{dog[0]}{' : '}{dog[1]}</h2>)
         } else {
             var mappedDogs = 'loading dog comparison'
         }
         return (
-            <div>
-                <h1>Compare Route</h1>
+            <div className='App compareContainer'>
+                <h1>Here's the names of the all time best dogs!</h1>
                 {mappedDogs}
             </div>
         )

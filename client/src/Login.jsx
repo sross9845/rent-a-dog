@@ -21,7 +21,9 @@ class Login extends Component {
         }).then( response => {
             if (response.data.type === 'error') {
                 console.log('ERROR:', response.data.message)
-                // TODO: maybe put this message in state? 
+                this.setState({
+                    message: response.data.message
+                })
             } else {
                 localStorage.setItem('mernToken', response.data.token)
                 this.props.liftToken(response.data)
@@ -37,6 +39,8 @@ class Login extends Component {
             <div>
                 <h3>Log into your account!</h3>
                 <form onSubmit={this.handleSubmit}>
+                {this.state.message} 
+                <br />
                 Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
                 Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
                 <input type='submit' value='Log In!' />

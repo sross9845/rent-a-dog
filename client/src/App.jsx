@@ -160,7 +160,7 @@ class App extends Component {
     if(this.state.user){
       var profile = (
         <>
-          <NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink> {' | '} <NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '} <NavLink className='navlink' to='/' onClick={this.logOut}>LOG OUT</NavLink><NavLink className='navlink' to='/compare' >COMPARE</NavLink>
+          <NavLink className='navlink' to='/create'>CREATE</NavLink>{' | '}<NavLink  className='navlink' to='/saved'>SAVED</NavLink>{' | '}<NavLink  className='navlink' to='/meet'>ADOPT</NavLink> {' | '} <NavLink className='navlink' to='/compare' >TOP DOGS</NavLink> {' | '}  <NavLink  className='navlink' to='/profile'>PROFILE</NavLink>{' | '} <NavLink className='navlink' to='/' onClick={this.logOut}>LOG OUT</NavLink>
         </>
       )
     }
