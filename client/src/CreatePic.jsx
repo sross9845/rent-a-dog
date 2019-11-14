@@ -110,7 +110,6 @@ class CreatePic extends Component {
         }
         return ( 
             <div>
-            <br />
             <div className='contain' >
             <div className="createSidebar">
             {mappedDogs}

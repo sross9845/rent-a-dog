@@ -41,7 +41,6 @@ class AllDogs extends Component {
     render() { 
         return ( 
             <div>
-            <br />
             <div className="contain">
                 <DogList handleClick={this.handleDetailsClick} dogList={this.state.dogList}/>
                 <SelectedDog dog={this.state.currentDog} />
