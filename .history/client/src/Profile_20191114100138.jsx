@@ -22,7 +22,7 @@ class Profile extends Component {
                     email: response.data.email,
                     password: this.props.user.password,
                     name: response.data.name,
-                    id: this.props.user._id,
+                    id: this.props.user_id,
                     favoriteBreed: response.data.favoriteBreed,
                     image: response.data.photo
                 })
