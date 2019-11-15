@@ -38,18 +38,24 @@ router.get('/', (req, res) => {
             result.push([key.match(/\D/g), myDogObj[key]])
         });
 
-        for (let i = 0; i < result.length; i+=2) {
+        for (let i = 0; i < myArray.length; i+=2) {
             var b;
-            if (i < result.length-1) {
+            // console.log(myArray.length)
+            if (i < myArray.length-1) {
                 b = i+1
             } else {
                 b = 0
             }
-            let myCurrentArray = result[i][1]
-            let myNextArray = result[b][1]
+            let myCurrentArray = myArray[i][1]
+            // console.log('myCurrentArray', myCurrentArray)
+            // console.log('i is:', i)
+            let myNextArray = myArray[b][1]
+            // console.log('myNextArray', myNextArray)
+            // console.log('b is:', b)
             if (myCurrentArray > myNextArray) {
-                let arrayToUnshift = result[i].splice(0, 2)
-                result.unshift(arrayToUnshift)
+              // console.log('inside if statement', myCurrentArray, myNextArray)
+                let arrayToUnshift = myArray[i].splice(0, 2)
+                myArray.unshift(arrayToUnshift)
             }
         }
 
