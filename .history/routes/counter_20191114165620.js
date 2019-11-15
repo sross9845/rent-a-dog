@@ -53,15 +53,15 @@ router.get('/', (req, res) => {
                 let arrayToUnshift = result[i].splice(0, 2)
                 finalAwesomeness.unshift(arrayToUnshift)
                 result.unshift(arrayToUnshift)
-                } else {
-                    let arrayToUnshift = result[i].splice(0, 2)
-                    finalAwesomeness.push(arrayToUnshift)
-                }
+            } else {
+                let arrayToUnshift = result[i].splice(0, 2)
+                finalAwesomeness.push(arrayToUnshift)
+            }
             }
 
         /// send the data to ront end for display
-        console.log(finalAwesomeness)
-        res.json(finalAwesomeness)
+        console.log(result)
+        res.json(result)
     })
 })
 
