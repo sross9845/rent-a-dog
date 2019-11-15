@@ -25,7 +25,7 @@ class CompareProfile extends React.Component {
         }
         return (
             <div className='App'>
-                <h1 className='title'>Here are the Dog's user Ratings!</h1>
+                <h1 className='title'>Here are the Dog's User Ratings!</h1>
                 {mappedDogs}
             </div>
         )

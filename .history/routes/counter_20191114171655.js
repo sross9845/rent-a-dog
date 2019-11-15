@@ -60,8 +60,8 @@ router.get('/', (req, res) => {
         //     }
 
         /// send the data to ront end for display
-        console.log(result)
-        res.json(result)
+        console.log(finalAwesomeness)
+        res.json(finalAwesomeness)
     })
 })
 
