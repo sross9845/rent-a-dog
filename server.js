@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(helmet())
 
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection
 db.once('open', () => {
     console.log(`connected to MongoDb on ${db.host}:${db.port}...`)
