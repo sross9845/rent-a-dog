@@ -52,10 +52,10 @@ router.get('/', (req, res) => {
             if (myCurrentArray > myNextArray) {
                 let arrayToUnshift = result[i].splice(0, 2)
                 finalAwesomeness.unshift(arrayToUnshift)
-                result.unshift(arrayToUnshift)
+                result.push(arrayToUnshift)
                 } else {
                     let arrayToUnshift = result[i].splice(0, 2)
-                    finalAwesomeness.push(arrayToUnshift)
+                    finalAwesomeness.unshift(arrayToUnshift)
                 }
             }
 
