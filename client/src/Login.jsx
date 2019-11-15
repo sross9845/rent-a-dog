@@ -13,6 +13,7 @@ class Login extends Component {
         })
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault()
         axios.post('/auth/login', {
@@ -20,7 +21,6 @@ class Login extends Component {
             password: this.state.password
         }).then( response => {
             if (response.data.type === 'error') {
-                console.log('ERROR:', response.data.message)
                 this.setState({
                     message: response.data.message
                 })

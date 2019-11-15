@@ -18,6 +18,7 @@ class SignUp extends Component {
             [e.target.name]: e.target.value
         })
     }
+    //sends off data to database to create a user
     handleSubmit = (e) => {
         e.preventDefault()
         let myObj = {...this.state}
@@ -42,7 +43,7 @@ class SignUp extends Component {
             console.log(err)
         })
     }
-
+    //Uploading images to cloudinary
     uploadImage = e => {
         const files = e.target.files
         const data = new FormData()

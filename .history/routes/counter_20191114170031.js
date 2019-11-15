@@ -38,30 +38,30 @@ router.get('/', (req, res) => {
             result.push([key.match(/\D/g), myDogObj[key]])
         });
 
-        // var finalAwesomeness = []
-        //     for (let i = 0; i < result.length; i++) {
-        //     var b;
-        //     // console.log(result.length)
-        //     if (i < result.length-1) {
-        //         b = i+1
-        //     } else {
-        //         b = 0
-        //     }
-        //     let myCurrentArray = result[i][1]
-        //     let myNextArray = result[b][1]
-        //     if (myCurrentArray > myNextArray) {
-        //         let arrayToUnshift = result[i].splice(0, 2)
-        //         finalAwesomeness.unshift(arrayToUnshift)
-        //         result.push(arrayToUnshift)
-        //         } else {
-        //             let arrayToUnshift = result[i].splice(0, 2)
-        //             finalAwesomeness.unshift(arrayToUnshift)
-        //         }
-        //     }
+        var finalAwesomeness = []
+            for (let i = 0; i < result.length; i++) {
+            var b;
+            // console.log(result.length)
+            if (i < result.length-1) {
+                b = i+1
+            } else {
+                b = 0
+            }
+            let myCurrentArray = result[i][1]
+            let myNextArray = result[b][1]
+            if (myCurrentArray > myNextArray) {
+                let arrayToUnshift = result[i].splice(0, 2)
+                finalAwesomeness.unshift(arrayToUnshift)
+                result.push(arrayToUnshift)
+                } else {
+                    let arrayToUnshift = result[i].splice(0, 2)
+                    finalAwesomeness.unshift(arrayToUnshift)
+                }
+            }
 
         /// send the data to ront end for display
-        console.log(result)
-        res.json(result)
+        console.log(finalAwesomeness)
+        res.json(finalAwesomeness)
     })
 })
 

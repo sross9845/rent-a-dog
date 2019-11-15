@@ -6,7 +6,7 @@ class CompareProfile extends React.Component {
     state = {
         dogList: []
     }
-    //grabs favorited dogs and how many times these dogs were favorited
+
     componentDidMount = () => {
         axios.get('/counter')
         .then(response => {

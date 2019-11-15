@@ -13,6 +13,7 @@ class Home extends Component {
           </p>
           </div>
       )
+  //Conditional displaying login or signup
   } else if (this.props.login){
       contents = (
       <div className="Login">
