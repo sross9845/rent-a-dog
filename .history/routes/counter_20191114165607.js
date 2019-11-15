@@ -39,29 +39,29 @@ router.get('/', (req, res) => {
         });
 
         var finalAwesomeness = []
-            for (let i = 0; i < result.length; i++) {
+            for (let i = 0; i < myArray.length; i++) {
             var b;
-            // console.log(result.length)
-            if (i < result.length-1) {
+            // console.log(myArray.length)
+            if (i < myArray.length-1) {
                 b = i+1
             } else {
                 b = 0
             }
-            let myCurrentArray = result[i][1]
-            let myNextArray = result[b][1]
+            let myCurrentArray = myArray[i][1]
+            let myNextArray = myArray[b][1]
             if (myCurrentArray > myNextArray) {
-                let arrayToUnshift = result[i].splice(0, 2)
+                let arrayToUnshift = myArray[i].splice(0, 2)
                 finalAwesomeness.unshift(arrayToUnshift)
-                result.unshift(arrayToUnshift)
-                } else {
-                    let arrayToUnshift = result[i].splice(0, 2)
-                    finalAwesomeness.push(arrayToUnshift)
-                }
+                myArray.unshift(arrayToUnshift)
+            } else {
+                let arrayToUnshift = myArray[i].splice(0, 2)
+                finalAwesomeness.push(arrayToUnshift)
+            }
             }
 
         /// send the data to ront end for display
-        console.log(finalAwesomeness)
-        res.json(finalAwesomeness)
+        console.log(result)
+        res.json(result)
     })
 })
 
