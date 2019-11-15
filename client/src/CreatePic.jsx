@@ -23,10 +23,8 @@ class CreatePic extends Component {
                 })
             })
             if (this.props.user) {
-                console.log(this.props.user)
                 axios.get(`/meet/${this.props.user._id}`)
                 .then(response => {
-                    console.log(response)
                     this.setState({
                         userDetails: response.data
                     })
@@ -43,7 +41,6 @@ class CreatePic extends Component {
         this.setState({
             photo : myPhotoArray
         })
-        console.log(this.state.photo)
     }
 
     handleSubmitClick = (event) => {
@@ -68,11 +65,12 @@ class CreatePic extends Component {
     }
 
     render() { 
+        //conditionally is rendering the placeholder photo and the loading of the dog list
         if (this.state.userDetails) {
             if (this.state.userDetails.photo) {
             var myPhoto =(
                 <>
-                 <img className='userImage' src={this.state.userDetails.photo}></img>
+                    <img className='userImage' src={this.state.userDetails.photo}></img>
                 </>
             )
             } else{

@@ -7,6 +7,7 @@ class DogList extends Component {
         this.state = {  }
     }
     render() { 
+        //turning each dog into a part of the sidebar and passing element into each handle click
         if (this.props.dogList) {
             var myObj = this.props.dogList.animals.map((ele, id) => {
 

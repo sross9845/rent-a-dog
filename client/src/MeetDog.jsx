@@ -5,7 +5,7 @@ class MeetDog extends Component {
 
     state = { 
         tokenVar: null,
-        dogList: null,
+        dogList: null
     }
 
     componentDidMount = () => {

@@ -11,7 +11,7 @@ class AllDogs extends Component {
         dogList: null,
         currentDog: null
     }
-
+    //Grabbing token and then grabbing full list of dogs
     componentDidMount = () => {
         axios.get('/token')
         .then(response => {
@@ -27,7 +27,7 @@ class AllDogs extends Component {
             })
         })
     }
-
+    //Takes the clicked element and displays the results of just the current clicked dog
     handleDetailsClick = (ele) => {
         axios.get(`/token/${this.state.tokenVar._id}/${ele.id}`)
         .then(response => {

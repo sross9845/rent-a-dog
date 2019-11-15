@@ -1,5 +1,4 @@
 
-
 body {
   margin: 0;
   background: url('https://i.imgur.com/6ULGVWp.jpg');
@@ -11,21 +10,73 @@ body {
 
 html{
   scroll-behavior: smooth;
-
 }
 
 hr{
   border-color: white;
 }
 
-.largePic{
-  height:300px;
-  width:300px;
-  margin: 0 auto;
-  display:block;
-  border: 2px outset white;
+form input{
+  margin: 5px;
 }
 
+nav{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #04286E, #080945);
+  color: #EDFEEB;
+  font-size: 1.25em;
+  width:100%;
+}
+
+
+.navlink{
+  color: #EDFEEB;
+  margin: 1em;
+  text-decoration: none;
+  line-height: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+.logo {
+height: 75px;
+width: 85px;
+border-radius: 25%;
+margin-left: .25em;
+}
+
+.homeContents{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid white;
+  border-radius: 20%;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+
+.Login{
+  margin: 1em auto;
+}
+.Signup{
+  margin: 1em auto;
+}
+
+.title{
+  margin: 0px;
+  padding: 25px;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+}
+
+.homeInfo{
+  font-size: 1.5em;
+  color: rgba(237, 254, 235, 0.822);
+  text-align: justify;
+  padding: 2em;
+}
 
 .contain{
   display: flex;
@@ -33,10 +84,10 @@ hr{
   margin-top: 5px;
 }
 
-
 .sideBarDiv {
   border: 2px outset white;
   background: rgba(0, 0, 0, 0.85);
+  
   position: relative
 }
 
@@ -65,75 +116,24 @@ hr{
   height: 100vh;
   width: 75%
 }
+
 .doginfobefore{
   font-size: 4em;
 }
+
 .doginfoafter{
   font-size: 3em;
-
+  
 }
 
-.homeInfo{
-  font-size: 1.5em;
-  color: rgba(237, 254, 235, 0.822);
-  text-align: justify;
-  padding: 2em;
-}
-
-nav{
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to top, #04286E, #080945);
-  color: #EDFEEB;
-  font-size: 1.25em;
-  width:100%;
-}
-
-form input{
-  margin: 5px;
-}
-
-.navlink{
-  color: #EDFEEB;
-  margin: 1em;
-  text-decoration: none;
-  line-height: 50px;
-  font-family: 'Lato', sans-serif;
-}
-
-
-.homeContents{
-  width: 60%;
+.largePic{
+  height:300px;
+  width:300px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  border: 4px solid white;
-  border-radius: 20%;
-  background: rgba(0, 0, 0, 0.85);
+  display:block;
+  border: 2px outset white;
 }
 
-
-.Login{
-  margin: 1em auto;
-}
-.Signup{
-  margin: 1em auto;
-}
-
-.title{
-  margin: 0px;
-  padding: 25px;
-  font-weight: bold;
-  font-size: 4em;
-  text-align: center;
-}
-
-.logo {
-height: 75px;
-width: 85px;
-border-radius: 25%;
-margin-left: .25em;
-}
 
 .userImage{
   width: 750px;

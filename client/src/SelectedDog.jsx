@@ -6,6 +6,7 @@ class SelectedDog extends Component {
         this.state = {  }
     }
     render() { 
+        //if there is a dog display info
         if (this.props.dog){
             var dogInfo = (
                     <div className='doginfoafter'>
