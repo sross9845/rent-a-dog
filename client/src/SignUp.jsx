@@ -65,14 +65,14 @@ class SignUp extends Component {
                 <h3>Create a new account</h3>
                 <form onSubmit={this.handleSubmit}>
                 {this.state.message}
-                <br />
-                Name: <input type='text' name='name' onChange={this.handleChange} value={this.state.name} /> <br />
-                Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
-                Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
-                FavoriteBreed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} /> <br />
-                <h3>Upload Image</h3>
-                <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
-                <br /><input type='submit' value='Sign Up!' />
+                    <br />
+                    Name: <input type='text' name='name' onChange={this.handleChange} value={this.state.name} /> <br />
+                    Email: <input type='text' name='email' onChange={this.handleChange} value={this.state.email} /> <br />
+                    Password: <input type='password' name='password' onChange={this.handleChange} value={this.state.password} /> <br />
+                    Favorite Breed: <input type='text' name='favoriteBreed' onChange={this.handleChange} value={this.state.favoriteBreed} /> <br />
+                    <h3>Upload Image</h3>
+                    <input type="file" name="file" placeholder="Upload an image" onChange={this.uploadImage}/>
+                    <br /><input type='submit' value='Sign Up!' />
                 </form>
             </div>
         );
